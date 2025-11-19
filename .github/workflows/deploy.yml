@@ -1,27 +1,28 @@
+with:
 name: Deploy to DigitalOcean
 
 on:
   push:
     branches:
-      - main
-      - master
+      - main  # O 'master', depende de cómo se llame tu rama principal
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Deploy to DigitalOcean Droplet
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.DROPLET_HOST }}
-          username: ${{ secrets.DROPLET_USER }}
-          key: ${{ secrets.DROPLET_SSH_KEY }}
-          port: ${{ secrets.DROPLET_PORT }}
-          script: |
-            cd /var/www/nauticapp
-            git pull origin main
-            echo "Deployment completed at $(date)"
+    - name: Descargar código del repositorio
+      uses: actions/checkout@v4
+
+    - name: Subir archivos al Droplet via SCP
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: 22
+        # 'source' es qué carpetas de tu proyecto subir. "." es todo.
+        source: "."
+        # 'target' es la carpeta en tu Droplet donde está la web (ej. /var/www/html)
+        target: "/var/www/html/mi-web" 
+        # IMPORTANTE: Cambia '/var/www/html/mi-web' por tu ruta real

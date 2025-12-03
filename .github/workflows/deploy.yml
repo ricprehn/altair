@@ -1,28 +1,25 @@
-with:
 name: Deploy to DigitalOcean
 
 on:
   push:
     branches:
-      - main  # O 'master', depende de cómo se llame tu rama principal
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Descargar código del repositorio
-      uses: actions/checkout@v4
-
-    - name: Subir archivos al Droplet via SCP
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        port: 22
-        # 'source' es qué carpetas de tu proyecto subir. "." es todo.
-        source: "."
-        # 'target' es la carpeta en tu Droplet donde está la web (ej. /var/www/html)
-        target: "/var/www/html/mi-web" 
-        # IMPORTANTE: Cambia '/var/www/html/mi-web' por tu ruta real
+      - name: Deploy to DigitalOcean Droplet
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          port: ${{ secrets.DROPLET_PORT }}
+          script: |
+            cd /var/www/altair
+            git pull origin main
+            # If you had a build step, it would go here, e.g.:
+            # npm install
+            # npm run build
+            # sudo systemctl restart nginx

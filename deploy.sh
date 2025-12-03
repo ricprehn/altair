@@ -6,8 +6,8 @@
 set -e
 
 # Configuration
-REPO_URL="https://github.com/YOUR_USERNAME/nauticapp.git"
-DEPLOY_DIR="/var/www/nauticapp"
+REPO_URL="https://github.com/ricprehn/altair.git"
+DEPLOY_DIR="/var/www/altair"
 BRANCH="main"
 
 echo "=========================================="

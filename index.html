@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NauticApp Sailing School</title>
+    <title>Escuela Náutica Altair en Barcelona | Titulaciones Náuticas</title>
+    <meta name="description"
+        content="Titulaciones náuticas en Barcelona: PER, Licencia de Navegación, PNB. Cursos presenciales y online, prácticas en grupos reducidos. ¡Obtén tu título náutico!">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -16,13 +19,15 @@
 <body>
     <header>
         <nav>
-            <div class="logo">NauticApp</div>
+            <div class="logo">
+                <i class="fas fa-anchor"></i> Escuela Náutica Altair
+            </div>
             <div class="nav-links">
-                <a href="#home">Hoome</a>
-                <a href="#about">About</a>
-                <a href="#courses">Courses</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact" class="cta-button">Contact Us</a>
+                <a href="#home">Inicio</a>
+                <a href="#about">Nosotros</a>
+                <a href="#courses">Cursos</a>
+                <a href="#services">Servicios</a>
+                <a href="#contact" class="cta-button">Contacto</a>
             </div>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -33,82 +38,290 @@
     <main>
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1>Set Sail on Your Next Adventure</h1>
-                <p>Professional sailing courses for all skill levels in beautiful waters</p>
-                <a href="#courses" class="cta-button">Explore Courses</a>
+                <h1>Tu Aventura Náutica Comienza Aquí</h1>
+                <p>Titulaciones náuticas oficiales en Barcelona. Formación de calidad con grupos reducidos y trato
+                    personalizado.</p>
+                <a href="#courses" class="cta-button">Ver Cursos</a>
             </div>
         </section>
 
         <section id="about" class="section">
-            <h2>Why Choose Our Sailing School?</h2>
+            <h2>¿Por Qué Escuela Náutica Altair?</h2>
             <div class="features">
                 <div class="feature">
-                    <i class="fas fa-anchor"></i>
-                    <h3>Experienced Instructors</h3>
-                    <p>Learn from certified professionals with years of sailing experience.</p>
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Grupos Reducidos</h3>
+                    <p>Máximo 7 alumnos por barco para garantizar una formación personalizada y de calidad.</p>
                 </div>
                 <div class="feature">
-                    <i class="fas fa-ship"></i>
-                    <h3>Modern Fleet</h3>
-                    <p>Train on well-maintained, up-to-date vessels.</p>
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Trato Personalizado</h3>
+                    <p>Adaptamos las clases a tus necesidades. Teoría presencial u online, prácticas grupales o
+                        individuales.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-certificate"></i>
-                    <h3>Certification</h3>
-                    <p>Internationally recognized sailing certifications.</p>
+                    <h3>Titulaciones Oficiales</h3>
+                    <p>Cursos homologados para obtener titulaciones náuticas reconocidas oficialmente.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ship"></i>
+                    <h3>Flota Moderna</h3>
+                    <p>Embarcaciones bien mantenidas y equipadas con la última tecnología náutica.</p>
                 </div>
             </div>
         </section>
 
         <section id="courses" class="section">
-            <h2>Our Courses</h2>
+            <h2>Nuestros Cursos</h2>
             <div class="course-cards">
-                <div class="course-card">
-                    <h3>Beginner Sailing</h3>
-                    <p>Learn the basics of sailing in a safe environment.</p>
-                    <span class="price">From $299</span>
-                    <a href="#contact" class="cta-button">Learn More</a>
-                </div>
                 <div class="course-card featured">
-                    <h3>Coastal Cruising</h3>
-                    <p>Take your skills to the next level with coastal navigation.</p>
-                    <span class="price">From $499</span>
-                    <a href="#contact" class="cta-button">Learn More</a>
+                    <div class="course-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>PER - Patrón de Embarcaciones de Recreo</h3>
+                    <p>Gobierna barcos de hasta 15/24 metros de eslora. El título náutico más completo para navegación
+                        recreativa.</p>
+                    <ul class="course-details">
+                        <li><i class="fas fa-check"></i> Teoría presencial u online</li>
+                        <li><i class="fas fa-check"></i> Prácticas en Barcelona</li>
+                        <li><i class="fas fa-check"></i> Ampliación a Baleares disponible</li>
+                    </ul>
+                    <span class="price">Consultar precio</span>
+                    <a href="#contact" class="cta-button">Más Información</a>
                 </div>
                 <div class="course-card">
-                    <h3>Offshore Sailing</h3>
-                    <p>Master the art of offshore navigation and passage making.</p>
-                    <span class="price">From $899</span>
-                    <a href="#contact" class="cta-button">Learn More</a>
+                    <div class="course-icon">
+                        <i class="fas fa-sailboat"></i>
+                    </div>
+                    <h3>Licencia de Navegación</h3>
+                    <p>Antes llamado "titulín". Gobierna embarcaciones de hasta 6 metros de eslora.</p>
+                    <ul class="course-details">
+                        <li><i class="fas fa-check"></i> Curso intensivo</li>
+                        <li><i class="fas fa-check"></i> Ideal para principiantes</li>
+                        <li><i class="fas fa-check"></i> Rápida obtención</li>
+                    </ul>
+                    <span class="price">Consultar precio</span>
+                    <a href="#contact" class="cta-button">Más Información</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>PNB - Patrón de Navegación Básica</h3>
+                    <p>Gobierna embarcaciones de hasta 8 metros de eslora. Perfecto para navegación costera.</p>
+                    <ul class="course-details">
+                        <li><i class="fas fa-check"></i> Navegación diurna</li>
+                        <li><i class="fas fa-check"></i> Hasta 5 millas de la costa</li>
+                        <li><i class="fas fa-check"></i> Formación completa</li>
+                    </ul>
+                    <span class="price">Consultar precio</span>
+                    <a href="#contact" class="cta-button">Más Información</a>
                 </div>
             </div>
         </section>
 
+        <section id="services" class="section services-section">
+            <h2>Servicios Adicionales</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-compass"></i>
+                    <h3>Ampliación Baleares</h3>
+                    <p>Amplía tu PER para navegar hasta 24 metros y más de 12 millas de la costa entre Baleares y
+                        península.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Prácticas de Vela</h3>
+                    <p>Aprende a patronear veleros. Rumbos, ajuste de velas, trimado, fondeo a vela y más.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-anchor"></i>
+                    <h3>Cursos Especializados</h3>
+                    <p>Prácticas de navegación, seguridad, fondeo, maniobras en puerto, hombre al agua, radio VHF.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-yacht"></i>
+                    <h3>Alquiler de Yate</h3>
+                    <p>Alquila embarcaciones para practicar o disfrutar del Mediterráneo con tu título náutico.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Reparaciones Electrónicas</h3>
+                    <p>Servicio técnico especializado en electrónica náutica y sistemas de navegación.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Regala un Curso</h3>
+                    <p>El regalo perfecto para amantes del mar. Bonos regalo disponibles para todos nuestros cursos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué se estudia en la Escuela Náutica Altair?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>En Escuela Náutica Altair ofrecemos formación completa para la obtención de diferentes
+                            títulos náuticos de recreo: PER (Patrón de Embarcaciones de Recreo), Licencia de Navegación
+                            y PNB (Patrón de Navegación Básica). Además, disponemos de cursos de ampliación de
+                            atribuciones (Baleares, Vela) y prácticas de perfeccionamiento.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Ofrecéis opciones online para los cursos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, disponemos de opciones tanto presenciales como online para la parte teórica de todos
+                            nuestros cursos. Nuestra plataforma de formación online está disponible 24/7 con materiales
+                            didácticos, tests y recursos. Las prácticas se realizan siempre de forma presencial en
+                            Barcelona.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Se pueden realizar prácticas de forma independiente?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos cursos prácticos independientes para el perfeccionamiento en la navegación
+                            tanto a motor como a vela. También disponemos de prácticas específicas para la ampliación de
+                            atribuciones del PER (Baleares y Vela).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuánto duran los cursos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La duración varía según el curso. La Licencia de Navegación es el más breve (curso
+                            intensivo). El PNB requiere más formación teórica y práctica. El PER es el más completo y
+                            puede realizarse en modalidad intensiva o a lo largo de varios meses, adaptándonos a tu
+                            disponibilidad.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Ofrecéis facilidades de pago?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, disponemos de diferentes métodos de pago a plazos para que puedas financiar tu formación
+                            náutica de manera cómoda. Consúltanos para más información sobre las opciones disponibles.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuántos alumnos hay por barco en las prácticas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nunca superamos los 7 alumnos por barco, garantizando así una formación personalizada y de
+                            calidad. También ofrecemos prácticas individuales para quienes prefieren una atención
+                            exclusiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section testimonials-section">
+            <h2>Lo Que Dicen Nuestros Alumnos</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Excelente escuela náutica. Profesores muy profesionales y con mucha experiencia. Las prácticas
+                        en grupos reducidos hacen que aprendas mucho más. ¡Totalmente recomendable!"</p>
+                    <div class="testimonial-author">
+                        <strong>María G.</strong>
+                        <span>PER - 2024</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"La opción online me permitió estudiar a mi ritmo. Las prácticas fueron increíbles, aprendí
+                        muchísimo en poco tiempo. El trato personalizado marca la diferencia."</p>
+                    <div class="testimonial-author">
+                        <strong>Carlos R.</strong>
+                        <span>Licencia de Navegación - 2024</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Hice el PER con ampliación a Baleares y vela. Los instructores son excelentes y la flota está
+                        muy bien cuidada. Aprobé a la primera gracias a su método de enseñanza."</p>
+                    <div class="testimonial-author">
+                        <strong>Jorge M.</strong>
+                        <span>PER + Ampliaciones - 2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-link">
+                <a href="#" class="cta-button" target="_blank">
+                    <i class="fab fa-google"></i> Ver Más Opiniones en Google
+                </a>
+            </div>
+        </section>
+
         <section id="contact" class="section">
-            <h2>Get in Touch</h2>
+            <h2>Contacta con Nosotros</h2>
             <div class="contact-container">
                 <form id="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <select required>
-                        <option value="" disabled selected>Select a Course</option>
-                        <option value="beginner">Beginner Sailing</option>
-                        <option value="coastal">Coastal Cruising</option>
-                        <option value="offshore">Offshore Sailing</option>
+                    <input type="text" name="name" placeholder="Tu Nombre" required>
+                    <input type="email" name="email" placeholder="Tu Email" required>
+                    <input type="tel" name="phone" placeholder="Tu Teléfono">
+                    <select name="course" required>
+                        <option value="" disabled selected>Selecciona un Curso</option>
+                        <option value="per">PER - Patrón de Embarcaciones de Recreo</option>
+                        <option value="licencia">Licencia de Navegación</option>
+                        <option value="pnb">PNB - Patrón de Navegación Básica</option>
+                        <option value="baleares">Ampliación Baleares</option>
+                        <option value="vela">Prácticas de Vela</option>
+                        <option value="otro">Otro</option>
                     </select>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
+                    <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+                    <button type="submit" class="cta-button">Enviar Mensaje</button>
                 </form>
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Ocean Drive, Marina Bay</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@nauticapp.com</p>
+                    <h3>Información de Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Barcelona, España</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+34XXXXXXXXX">+34 XXX XXX XXX</a></p>
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:info@escuelanauticaaltair.com">info@escuelanauticaaltair.com</a></p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
+                    <a href="https://wa.me/34XXXXXXXXX" class="whatsapp-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
                 </div>
             </div>
         </section>
@@ -117,28 +330,41 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>NauticApp</h3>
-                <p>Your trusted partner in sailing education since 2023.</p>
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela de confianza para titulaciones náuticas en Barcelona desde 2023.</p>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#courses">Courses</a>
-                <a href="#contact">Contact</a>
+                <h3>Cursos</h3>
+                <a href="#courses">PER</a>
+                <a href="#courses">Licencia de Navegación</a>
+                <a href="#courses">PNB</a>
+                <a href="#services">Ampliación Baleares</a>
+                <a href="#services">Prácticas de Vela</a>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <a href="#about">Nosotros</a>
+                <a href="#services">Servicios</a>
+                <a href="#contact">Contacto</a>
             </div>
             <div class="footer-section">
                 <h3>Newsletter</h3>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit">Subscribe</button>
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Suscribirse</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 NauticApp Sailing School. All rights reserved.</p>
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Google Maps API - Replace YOUR_API_KEY with your actual API key -->
+    <!-- To get an API key: https://developers.google.com/maps/documentation/javascript/get-api-key -->
+    <!-- Ensure 'Places API' is enabled in your Google Cloud Console -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initGoogleReviews"
+        async defer></script>
 
     <script src="js/script.js"></script>
 </body>

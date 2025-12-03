@@ -29,6 +29,6 @@ jobs:
         key: ${{ secrets.DROPLET_SSH_KEY }}
         port: 22
         script: |
-          cd /var/www/nauticapp
+          cd /var/www/altair
           git pull origin main
           systemctl reload nginx

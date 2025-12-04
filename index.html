@@ -235,56 +235,21 @@
 
         <section id="testimonials" class="section testimonials-section">
             <h2>Lo Que Dicen Nuestros Alumnos</h2>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Excelente escuela náutica. Profesores muy profesionales y con mucha experiencia. Las prácticas
-                        en grupos reducidos hacen que aprendas mucho más. ¡Totalmente recomendable!"</p>
-                    <div class="testimonial-author">
-                        <strong>María G.</strong>
-                        <span>PER - 2024</span>
+            <div class="testimonials-slider-wrapper">
+                <button class="slider-btn prev-btn" aria-label="Previous Review"><i
+                        class="fas fa-chevron-left"></i></button>
+                <div class="testimonials-track-container">
+                    <div class="testimonials-track" id="testimonials-track">
+                        <!-- Reviews will be injected here by JavaScript -->
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"La opción online me permitió estudiar a mi ritmo. Las prácticas fueron increíbles, aprendí
-                        muchísimo en poco tiempo. El trato personalizado marca la diferencia."</p>
-                    <div class="testimonial-author">
-                        <strong>Carlos R.</strong>
-                        <span>Licencia de Navegación - 2024</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Hice el PER con ampliación a Baleares y vela. Los instructores son excelentes y la flota está
-                        muy bien cuidada. Aprobé a la primera gracias a su método de enseñanza."</p>
-                    <div class="testimonial-author">
-                        <strong>Jorge M.</strong>
-                        <span>PER + Ampliaciones - 2023</span>
-                    </div>
-                </div>
+                <button class="slider-btn next-btn" aria-label="Next Review"><i
+                        class="fas fa-chevron-right"></i></button>
             </div>
             <div class="reviews-link">
-                <a href="#" class="cta-button" target="_blank">
-                    <i class="fab fa-google"></i> Ver Más Opiniones en Google
+                <a href="https://www.google.com/maps/place/ESCUELA+N%C3%81UTICA+ALTAIR+%26+SAILING+TRIPS+BCN/@41.4041605,2.0005544,12z/data=!4m10!1m2!2m1!1sEscuela+N%C3%A1utica+Altair+!3m6!1s0x12a4a30c45e6cfbb:0x90dee3f49b470f78!8m2!3d41.3880922!4d2.1999616!15sChdFc2N1ZWxhIE7DoXV0aWNhIEFsdGFpcloZIhdlc2N1ZWxhIG7DoXV0aWNhIGFsdGFpcpIBDnNhaWxpbmdfc2Nob29s4AEA!16s%2Fg%2F11g6xwz4kn?entry=ttu&g_ep=EgoyMDI1MTIwMS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="cta-button outline">
+                    <i class="fab fa-google"></i> Ver todas las reseñas en Google Maps
                 </a>
             </div>
         </section>
@@ -359,12 +324,6 @@
             <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <!-- Google Maps API - Replace YOUR_API_KEY with your actual API key -->
-    <!-- To get an API key: https://developers.google.com/maps/documentation/javascript/get-api-key -->
-    <!-- Ensure 'Places API' is enabled in your Google Cloud Console -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initGoogleReviews"
-        async defer></script>
 
     <script src="js/script.js"></script>
 </body>

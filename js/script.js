@@ -168,76 +168,542 @@ document.addEventListener('DOMContentLoaded', function () {
     // Google Reviews Logic
     const staticReviews = [
         {
-            name: "María G.",
-            text: "Excelente escuela náutica. Profesores muy profesionales y con mucha experiencia. Las prácticas en grupos reducidos hacen que aprendas mucho más. ¡Totalmente recomendable!",
-            rating: 5,
-            date: "Hace 2 meses"
+            "name": "Daniel G J",
+            "text": "Tot molt bé amb en Ricart. Dia instructiu i divertit al veler d'Altair.",
+            "rating": 5,
+            "date": "2018-06-01"
         },
         {
-            name: "Carlos R.",
-            text: "La opción online me permitió estudiar a mi ritmo. Las prácticas fueron increíbles, aprendí muchísimo en poco tiempo. El trato personalizado marca la diferencia.",
-            rating: 5,
-            date: "Hace 1 mes"
+            "name": "Ivan",
+            "text": "Molt professional i didàctic. Recomanable 100%. Ricard moltes gràcies!",
+            "rating": 5,
+            "date": "2018-05-26"
         },
         {
-            name: "Jorge M.",
-            text: "Hice el PER con ampliación a Baleares y vela. Los instructores son excelentes y la flota está muy bien cuidada. Aprobé a la primera gracias a su método de enseñanza.",
-            rating: 5,
-            date: "Hace 3 meses"
+            "name": "Salva Herms",
+            "text": "Recomendable 100%, pasamos 24h. muy a gusto, buena compañia y aprendimos mucho. Ricard es muy buen profesor y mejor persona. Gracias Ricard.",
+            "rating": 5,
+            "date": "2018-05-19"
         },
         {
-            name: "Ana P.",
-            text: "Ricard es un instructor fantástico. Tiene muchísima paciencia y explica todo con claridad. Las prácticas en el velero Certascan fueron una experiencia inolvidable.",
-            rating: 5,
-            date: "Hace 4 meses"
+            "name": "Valadar Siro",
+            "text": "Experiencia unica, divertida y con un profesor muy facil de comprender y un curso muy ameno recomendable 100%",
+            "rating": 5,
+            "date": "2018-05-15"
         },
         {
-            name: "David S.",
-            text: "Muy buena relación calidad-precio. Me saqué la Licencia de Navegación en una mañana y fue muy divertido. El ambiente en el barco es genial.",
-            rating: 5,
-            date: "Hace 5 meses"
+            "name": "xavi",
+            "text": "Muy buena experiencia! Explica muy bien. Y ricard(profesor)es muy amable y simpatico  !recomentable para todos",
+            "rating": 5,
+            "date": "2018-05-02"
         },
         {
-            name: "Laura B.",
-            text: "Recomiendo 100% esta escuela. Son flexibles con los horarios y se nota que les apasiona lo que hacen. Aprendí a navegar de verdad, no solo para aprobar.",
-            rating: 5,
-            date: "Hace 2 semanas"
+            "name": "Manuel Carroza Trejo",
+            "text": "Una experiencia maravillosa.Lo hemos pasado genial y hemos aprendido muchísimo. Muchas gracias Ricard por el día que hemos pasado.☺☺",
+            "rating": 5,
+            "date": "2018-04-28"
         },
         {
-            name: "Marc T.",
-            text: "Una experiencia de 10. El velero es precioso y muy cómodo. Hicimos las prácticas de vela y aprendimos un montón sobre trimado y maniobras.",
-            rating: 5,
-            date: "Hace 6 meses"
+            "name": "Marcel Gaston",
+            "text": "He cursat la llicència de navegació, el curs té una duració de 6 hores que passen volant gràcies al dinamisme que li donen i al bon ambient.\nMolta flexibilitat d'horaris.\nRecomanable 100%",
+            "rating": 5,
+            "date": "2018-04-28"
         },
         {
-            name: "Sofia L.",
-            text: "Gracias a todo el equipo por el trato recibido. Me ayudaron mucho con la gestión del título y las prácticas fueron muy útiles. ¡Volveré para el Patrón de Yate!",
-            rating: 5,
-            date: "Hace 1 mes"
+            "name": "Alfonso Martin",
+            "text": "Una experiencia excepcional. Parecía que no pudiera ser, pero en seis horas aprendimos mucho gracias a lo ameno de la actividad y lo agradable del ambiente. Remarcar la actitud de Ricard, que con su devoción por la náutica y su trato afable, hizo que nos diera la sensación de que un conocido nos estaba enseñado a navegar.",
+            "rating": 5,
+            "date": "2018-04-19"
         },
         {
-            name: "Pablo R.",
-            text: "La mejor escuela náutica de Barcelona. Trato cercano, profesionalidad y buenos barcos. Si quieres aprender a navegar, este es el sitio.",
-            rating: 5,
-            date: "Hace 3 semanas"
+            "name": "joaquim molins",
+            "text": "Fue una suerte encontrar la Escuela Náutica Altair. Todo han sido facilidades. Primero Ricard me pasó un centro médico en el que, si vas de parte de Altair te hace más del 50% de dcnto. Segundo pude elegir el día para hacer el exámen práctico de navegación y mi sorpresa fue que, cuando llegué, estaba solo! El resto de náuticas esperan a llenar el grupo. Eso hizo que me cundieran al máximo mis cinco horas de navegación y formación. Además de todo esto el barco sale desde el Port Olímpic de Barcelona, con lo que fue para mí una pasada poder disfrutar de un día precioso y con viento viendo Barcelona desde el mar. Para acabar Ricard me pareció un marinero con mucha experiencia y muy didáctico. En cuanto pueda vuelvo para sacarme el PER.",
+            "rating": 5,
+            "date": "2018-03-21"
+        },
+        {
+            "name": "Diego",
+            "text": "Me acabo de sacar la licencia de navegacion en esta escuela y debo decir que el trato recibido y los conocimientos han sido excelentes, la teorica a sido muy amena y se practicaba mucho tiempo con el barco haciendo maniobras y navegando, vamos que no te aburres para nada y acabas sabiendo navegar que es lo importante, el profesor muy majo me lo e pasado genial, recomendable 100% Gracias!!!",
+            "rating": 5,
+            "date": "2018-02-15"
+        },
+        {
+            "name": "Jordi Burniol",
+            "text": "Una gran experiència. No sols ens hem tret la lliçència, sinó que se'ns han obert les portes a tot un món nou com és el de la navegació. El Ricard sap transmetre la seva passió i això s encomana. De ben segur que seguirem aprenent...",
+            "rating": 5,
+            "date": "2018-02-06"
+        },
+        {
+            "name": "maria perea",
+            "text": "Me he sacado la licencia de navegacion con practicas a vela Escuela altair  muy recomendable, un trato perfecto el profesor super amable y las explicaciones super clara y mucha facilidad para aprender .. 100x100 recomendable pasas un rato super agradable y aprendes mucho las practicas a vela muy interesantes .. rapido y facil gracias.",
+            "rating": 5,
+            "date": "2018-02-05"
+        },
+        {
+            "name": "Jordi Rubau",
+            "text": "Recomano especialment l'escola Altair.  Hem fet la llicència de navegació i en Ricard s'explica súper bé. Es nota que li agrada. Molt fàcil, interessant informació i alguna anècdota també! Un matí molt guai. Gràcies Ricard!!\nElena i Jordi.",
+            "rating": 5,
+            "date": "2018-01-29"
+        },
+        {
+            "name": "Isabel Gallo",
+            "text": "Recientemente realicé el curso de Licencia de Navegación en la Escuela Náutica Altair. Las dos horas de clases teoricas fueron de gran ayuda, explicaciones claras y concisas. Las 4 horas de prácticas de navegación fueron igual de buenas. Escuela muy recomendable!",
+            "rating": 5,
+            "date": "2018-01-21"
+        },
+        {
+            "name": "Odracir Nherp",
+            "text": "Realicé el curso de PER, aprobé a la primera. En las prácticas de motor aprendí muchísimo. Me animé con la ampliación del PER y las prácticas de VELA. Fueron 48 horas de travesía non-stop, una de las mejores experiencias que he tenido. Doy las gracias a la Escuela Náutica Altair y a el instructor Ricard por la increible formación!!",
+            "rating": 5,
+            "date": "2018-01-21"
+        },
+        {
+            "name": "Oscar Carreras",
+            "text": "Ricardo es un gran profesor, aprendí rápido la teoría náutica y me pude sacar sin problemas el examen del PER. Se nota que le gusta mucho lo que hace y lo demuestra dando las clases. Muy recomendable.",
+            "rating": 5,
+            "date": "2017-12-01"
+        },
+        {
+            "name": "Alvaro Martin Velasco",
+            "text": "Un curso genial! Muy dinámico y ameno. Recomendado al 100%",
+            "rating": 5,
+            "date": "2017-12-01"
+        },
+        {
+            "name": "Dani P",
+            "text": "Amplia formació i experiència de l'instructor. Transmet perfectament els coneixements. Agradable  jornada formativa a bord de \"l'Altair\"!!",
+            "rating": 5,
+            "date": "2017-07-28"
+        },
+        {
+            "name": "Carla Antonio",
+            "text": "Muy buena experiencia, práctico y ya pudiendo disfrutar de la licencia. Ricard es agradable con el alumnado y resuelve dudas.",
+            "rating": 5,
+            "date": "2025-10-14"
+        },
+        {
+            "name": "C PS",
+            "text": "Magnifico dia para navegar y aprender con sol en la cara y viento en las velas! Levamos anclas del Tavascan con rizada, enfilando rumbo certero con Altaïr!\nMuchas gracias ✊🏻🌞!",
+            "rating": 5,
+            "date": "2025-09-18"
+        },
+        {
+            "name": "Gabriel Munita",
+            "text": "Al principio tenia mis dudas de si tomar el curso me iba a servir de algo, pero vaya que fue una experiencia increíble. Ricard es un excelente profesor, cercano, amable y relajado supo transmitir sus más de 25 años en el mar.",
+            "rating": 5,
+            "date": "2025-09-17"
+        },
+        {
+            "name": "Mario González",
+            "text": "Excelente y rápida gestión de la renovación del título, y además obtuve un descuento en la revisión médica a través de la escuela náutica. Muy recomendable",
+            "rating": 5,
+            "date": "2025-07-16"
+        },
+        {
+            "name": "Gianfranco Masi",
+            "text": "Ya he seguido dos cursos con la escuela Altair y me he encontrado muy bien. Un buen ambiente y el profe muy claro y responsable en sus explicaciones. Os invito a probar la experiencia de estos cursos",
+            "rating": 5,
+            "date": "2025-07-14"
+        },
+        {
+            "name": "Ramón Narder",
+            "text": "Que grata experiencia! Ricard es de lo más agradable y explica todo muy bien. El tiempo pasó volando y definitivamente ha abierto una madriguera por la que descender a tope! 100% recomendado!",
+            "rating": 5,
+            "date": "2025-07-11"
+        },
+        {
+            "name": "Raquel Martín",
+            "text": "Una experiencia fantástica y Ricard un gran instructor, sin duda recomiendo la Escuela Náutica Altair.",
+            "rating": 5,
+            "date": "2025-07-01"
+        },
+        {
+            "name": "SOFIA YAN",
+            "text": "Realicé el curso para obtener la Licencia de Navegación a través del SOC, con Ricard como instructor. Lo recomiendo encarecidamente. El buen ambiente entre las compañeras y Ricard hace que la experiencia sea inmejorable.",
+            "rating": 5,
+            "date": "2025-07-01"
+        },
+        {
+            "name": "dani",
+            "text": "Gran profesor con mucha experiencia en su ámbito, sales de su curso con un recuerdo muy bueno y divertido.",
+            "rating": 5,
+            "date": "2025-06-20"
+        },
+        {
+            "name": "Valeria Lattanzi",
+            "text": "Estoy muy agradecida a Ricard por su paciencia y dedicación a la hora de compartir sus conocimientos y ayudarnos a practicar con amarres y conducción durante el curso de manejo de embarcaciones. Fueron dos días divertidos y muy útiles, tanto en la práctica como en la teoría.\nMe lo pasé tan bien que he vuelto a repetir y he realizado el Curso PER volviendo a bordo del Certascan, mis primeras impresiones fueron confirmadas e incluso superadas. ¡Recomendadísimo!",
+            "rating": 5,
+            "date": "2025-05-20"
+        },
+        {
+            "name": "La Cris",
+            "text": "La experiencia ha sido muy enriquecedora. Hemos aprendido muchísimas cosas, y Ricart es muy agradable y tiene mucha paciencia. Lo recomiendo totalmente.",
+            "rating": 5,
+            "date": "2025-05-22"
+        },
+        {
+            "name": "Linze",
+            "text": "Muy buena experiencia y Ricard un crack",
+            "rating": 5,
+            "date": "2025-05-20"
+        },
+        {
+            "name": "Daniel Munne Raventos",
+            "text": "Ricard, a part de ser una bona persona, estima el mar i fa que aprenguem a fer-ho amb els coneixements necessaris per exercir la responsabilitat que comporta ser Patró. Gràcies i bon vent Capità!",
+            "rating": 5,
+            "date": "2025-05-20"
+        },
+        {
+            "name": "Osvanira Alves",
+            "text": "Hice un curso de manejo de embarcaciones de rescate en playas con Ricard en su escuela náutica y fue una experiencia muy buena. Ricard estuvo siempre atento al grupo, respondió todas nuestras preguntas y compartió información adicional más allá del contenido del curso. Todo se dio en un ambiente relajado, con un grupo reducido, lo que facilitó el aprendizaje. Sin duda, consideraré hacer otros cursos con él y lo recomendaré a mis colegas.",
+            "rating": 5,
+            "date": "2025-05-20"
+        },
+        {
+            "name": "HAMID EZKARA",
+            "text": "Fue un día inolvidable 😃\nHemos aprendido y disfrutando del curso\nGracias ☺️",
+            "rating": 5,
+            "date": "2024-09-30"
+        },
+        {
+            "name": "Pilar garcia",
+            "text": "Ha sido un curso super xulo, de aprender y practicar a tope. Sin duda lo volvería a hacer",
+            "rating": 5,
+            "date": "2025-05-20"
+        },
+        {
+            "name": "A S",
+            "text": "Ricard es un grande.\nLa visita al buque de salvamento es un gran homenaje a estos héroes de diario y familiarizas con el buque. Pedazo motor.\nLo mejor, poner la motora a 22 nudos!!\nVolveremos por la licencia.",
+            "rating": 5,
+            "date": "2025-05-20"
+        },
+        {
+            "name": "Evuuki del C.",
+            "text": "Gracias de corazón a Altair por abrirme las puertas al mundo de la navegación.\nEl curso fue una experiencia muy motivadora, y el profesor Ricard transmitió una pasión contagiosa.\nCuando vuelva a Barcelona, me encantaría contar con vosotros para orientarme en la elección de mi primer barquito.\n\nGracias, Altair. Gracias, Ricard.\n\n————————————-\n\nHeartfelt thanks to Altair for introducing me to the world of sailing.\n\nThe course was truly motivating, and Ricard shared a contagious passion for the sea.\n\nWhen I return to Barcelona, I'd love to count on you to guide me in choosing my first boat.\n\nThank you, Altair. Thank you, Ricard.",
+            "rating": 5,
+            "date": "2025-05-15"
+        },
+        {
+            "name": "José Avendaño",
+            "text": "Buena experiencia y buen profesor, muy recomendable 👍🏽",
+            "rating": 5,
+            "date": "2025-04-26"
+        },
+        {
+            "name": "Edu Real",
+            "text": "Ricard, el dueño me recomendó hacer el PER con extension a Baleares y la verdad es que fue una excelente idea. Gran experiencia, aprendimos un montón y conocí a gente nueva e hicimos un grupo muy majo. El barco tiene de todo, esta limpio, ordenado y da sensación de seguridad. En la travesía lo que más me sorprendió fue la paz y tranquilidad, y tanto el amanecer como la noche bajo las estrellas son impagables.",
+            "rating": 5,
+            "date": "2020-12-08"
+        },
+        {
+            "name": "Albert Naudin",
+            "text": "Curs molt útil per navegar amb seguretat, pràctiques molt personalitzades en fantàstic veler. Molt recomanable!",
+            "rating": 5,
+            "date": "2020-11-04"
+        },
+        {
+            "name": "Joaquim Just",
+            "text": "Hicimos el curso para la  licencia de navegación con Ricard y fué de nivel excelente la experiencia.",
+            "rating": 5,
+            "date": "2020-09-28"
+        },
+        {
+            "name": "Fran Mosteiro",
+            "text": "Experiencia muy recomendable.\nInvertir la mañana de sábado con Ricard y algunas compañeras más, aprendiendo algunos de los secretos detrás de la navegación: obligatoriedades, maniobras básicas, fondeo, atraque, etc como parte del aprendizaje para obtener la Licencia de Navegación, sin duda, ha merecido la pena :)\n\nUna maravillosa experiencia, una magnífica manera de aprender a navegar y, sin ninguna duda, un gran maestro y una excelente \"aula\", el Certascan.\n\nGracias a ambos!",
+            "rating": 5,
+            "date": "2020-09-12"
+        },
+        {
+            "name": "Eduardo J. Celorio",
+            "text": "Hice el curso con Ricard por un par de recomendaciones entusiastas y ahora soy yo quien os lo recomienda.\n\nSe lo toma con la profesionalidad que hay que hacerlo pero además, lo pasas muy bien.  Lo recomiendo ampliamente.",
+            "rating": 5,
+            "date": "2020-08-27"
+        },
+        {
+            "name": "Laura",
+            "text": "He hecho las prácticas del PER con Ricard y la verdad es que es un muy buen instructor, aprendimos mucho y la experiencia fue muy buena! Ricard ha estado accesible en todo momento resolviéndonos dudas via whatsapp los dias antes del examen! Sin duda recomiendo la escuela náutica Altair!",
+            "rating": 5,
+            "date": "2020-07-25"
+        },
+        {
+            "name": "Sonia Ferreiro",
+            "text": "Una experiencia genial! Pudimos realizar las prácticas del PER los cuatro hermanos juntos en pocos días y aprendiendo mucho. Ricard ha sido un excelente profesor! Escuela Náutica Altair es, sin duda, muy recomendable!!",
+            "rating": 5,
+            "date": "2020-07-25"
+        },
+        {
+            "name": "w w",
+            "text": "Alegria mariners!\nRicard gran professional una experiència molt positiva s aprèn molt per a tots/es els que vulgueu aprendre a navegar us ho recomano!",
+            "rating": 5,
+            "date": "2020-07-25"
+        },
+        {
+            "name": "Joan Carles Cifre",
+            "text": "El Ricard d'Altair m'ha ofert una molt bona experiència de contacte amb la Navegació, molt personalitzada i atenta amb tots els detalls, desde el procés d'inscripció i tràmits administratius fins a l'aprenenentatge a bord del seu veler. He disfrutat aprenent i navegant amb ell i compartint la seva pasió. Ja tinc ganes de treure'm el proper títol!",
+            "rating": 5,
+            "date": "2020-07-20"
+        },
+        {
+            "name": "Seti",
+            "text": "En Ricard sempre està disponible per els dubtes que poguin sorgir. Han estat unes pràctiques molt divertides, i la teoria es fa amena amb regles memotècniques. Moltes gracies!!",
+            "rating": 5,
+            "date": "2020-07-19"
+        },
+        {
+            "name": "Luis Rosúa",
+            "text": "Vaig treure'm la llicència de navegació. L'experiència va ser molt positiva i enriquidora, en Ricard és un gran professional i amb molts coneixements sobre navegació. Va estar molt atent del grup i va explicar-nos el contingut del curs de manera amena i fàcil d'entendre. Una vegada a mar obert, entre altres coses, ens va parlar del funcionamet dels instruments de navegació, demostrant un gran coneixement d'aquests i del mar en general, a destacar també la seva preocupació per si ens marejavem. Tant a nivell professional com a nivell humà recomano fer la formació sobre navegació amb l'escola Altair,\n\nLluís",
+            "rating": 5,
+            "date": "2020-07-19"
+        },
+        {
+            "name": "Brian C.",
+            "text": "Hicimos el curso para la Licencia de Navegación y la verdad fue todo excelente. Buen grupo, reducido, y Ricard explica muy bien y responde todas las preguntas con claridad y paciencia. Durante el tiempo de práctica vamos rotando las posiciones y tareas en la embarcación, por lo que haces de todo. Definitivamente recomiendo el curso. Ahora veremos si me animo a hacer el PNB :) Gracias Ricard!",
+            "rating": 5,
+            "date": "2020-07-13"
+        },
+        {
+            "name": "Miuq Mi",
+            "text": "Fui desde Gerona para realizar las 48 horas de vela+Baleares y fue una experiencia inolvidable. Tuve la suerte de embarcarme con un espléndido grupo y aprender disfrutando de los conocimientos de Ricard que es un gran maestro de la náutica.\nRecomendable 100%",
+            "rating": 5,
+            "date": "2020-07-06"
+        },
+        {
+            "name": "Marc Basolí",
+            "text": "Recomiendo mucho a esta escuela náutica donde he podido gozar de la experiencia de Ricard el profesor y dónde además de sacarme el PER entero, he podido gozar de un fin de semana en Mallorca como si de vacaciones se tratara. El velero y la navegación ha sido fantástico",
+            "rating": 5,
+            "date": "2020-06-30"
+        },
+        {
+            "name": "Filippo Di Remigio",
+            "text": "Awesome experience. Had great time with Ricard and the other participants.\nHighly recommended",
+            "rating": 5,
+            "date": "2020-03-22"
+        },
+        {
+            "name": "J. Leyton",
+            "text": "Una experiencia increible. Fuimos a realizar las practicas del PER en modo intensivo y en 5 días obtuvimos las atribuciones de vela, baleares, prácticas de radio y de seguridad.\nDesde el primer momento Ricard te pone a los mandos del Certascan, entradas y salidas de puerto, amarres, fondeos, navegación nocturna, en muchas ocasiones tu decides la derrota. Te enseña un buen marinero.",
+            "rating": 5,
+            "date": "2020-03-11"
+        },
+        {
+            "name": "Mary",
+            "text": "La experiencia fue increíble. Desde el primer minuto Ricard nos dejó manejar a vela y a motor así como hacer numerosas maniobras dentro de puerto, aunque en todo momento te sientes respaldado por su experiencia y conocimiento del mar.\nNo solo aprendes sino que también resulta una experiencia divertida y motivadora.\nSobre el profe ya está todo dicho :D amable, divertido, motivador y siempre atento para resolver tus dudas antes, durante e incluso después del curso.\nEn cuanto al barco resultó cómodo y bien equipado tecnológicamente.\nEn mi caso hice el curso del PER con atribución de vela y ampliación a Baleares. Para la parte de seguridad y radio, su escuela también cuenta con equipos de simulación.\nEn resumen, muy recomendable.\n\nGracias por todo Ricard!",
+            "rating": 5,
+            "date": "2020-03-06"
+        },
+        {
+            "name": "Aldo Lo Presti",
+            "text": "Con la escuela náutica Altair hice el curso para la Licencia de Navegación. Fue una mañana divertida y estimulante, seis horas intensas a bordo del Certascan, un precioso barco de 35 pies. Además de ser un experto capitán, Ricard es también un formidable instructor. Nos transmitió conocimientos y habilidades así como anécdotas de sus muchos años de navegación, haciéndonos sentir siempre a gusto a pesar del tráfico de la bocana del puerto y haciéndonos experimentar en primeras personas numerosas maniobras, nudos y rumbos. Recomiendo encarecidamente esta escuela y volvería para más cursos.",
+            "rating": 5,
+            "date": "2024-10-20"
+        },
+        {
+            "name": "Chiara Venturino",
+            "text": "Quiero agradecer a Ricard Prehn y a la escuela náutica Altair por el excelente curso de licencia de navegación. Fue una experiencia muy práctica y clara, donde cada concepto se explicó de manera sencilla y eficiente. Ricard tiene una gran experiencia para transmitir conocimientos.\nLo recomiendo totalmente a quienes busquen un curso de calidad y profesionalismo!",
+            "rating": 5,
+            "date": "2024-10-16"
+        },
+        {
+            "name": "Andreu Davison",
+            "text": "Desde el primer momento que vi a Ricard me di cuenta que era un navegante que lleva el mar en todo su ADN, destilaba amor por la navegación por todo su ser. Una vez en marcha además, me di cuenta con gran gratitud que es un excelente instructor que se toma todo el tiempo necesario para que los alumnos podamos aprender todo lo necesario en el mundo de la navegación. Cómo llovía ese día se llego a considerar la opción de cancelar la salida pero él insistió en hacerla aún en esas condiciones, dejándonos llevar el timón y con toda la paciencia y amor por enseñar nos dio los conocimientos básicos de navegación en un estupendo ambiente. No sólo yo disfruté al máximo la experiencia sino todos los alumnos que asistimos. Su barco estaba cuidado al máximo detalle con un equipamiento más que razonable que ayudaba mucho en la navegación. En ningún momento perdió los nervios por nuestros errores y en todo momento se mostraba muy compasivo y proactivo en ayudarnos a sacar lo mejor de nosotros mismos. Al final de la jornada el sentimiento de satisfacción no podía ser mayor. A mí incluso me dio pena tener que dejar el barco al llegar a puerto, me invadía una sensación de 'hogar' muy agradable el estar en su barco. No solo lo recomiendo ampliamente si no que le deseo lo mejor en toda su carrera de navegación que tiene por delante. Ha cruzado el Atlántico a vela y nos comentaba que ardía en deseos de ser él que quería llevar el timón en olas de varios metros. Un auténtico navegante que bajo ningún concepto os deberiáis perder si vuestra intención es tener un primer contacto con la navegación o incluso si ya tenéis ciertos conceptos. No dejaréis de aprender y disfrutar del mar con él. A mí, personalmente me encantaría volver a navegar con él y haré todo lo posible por que así sea. Larga vida de navegación para Ricard y que sus conocimientos sigan llenando los corazones de los futuros navegantes generación tras generación. Con Ricard tenemos una auténtica joya en la navegación, no nos la perdamos!\n\nMuchas Gracias Ricard y ojalá izemos velas en un futuro juntos! Nada me gustaría más.\n\nUn abrazo Capitán 🫡⛵️⚓️",
+            "rating": 5,
+            "date": "2024-10-05"
+        },
+        {
+            "name": "Belen Torres",
+            "text": "Obtuve la licencia de navegación con ellos. Ricard es muy profesional y hace la clase muy amena e interesante. Lo recomiendo!",
+            "rating": 5,
+            "date": "2024-10-01"
+        },
+        {
+            "name": "Manuel Juan F Gil Morato",
+            "text": "Me gusto un monton! Hice el titulin subvencionado por barcelona activa.\n100% recomendable!!!",
+            "rating": 5,
+            "date": "2024-10-01"
+        },
+        {
+            "name": "Jose Gomez Perez",
+            "text": "Muy buen profesor y sobre todo un profesional todo un 10",
+            "rating": 5,
+            "date": "2024-08-04"
+        },
+        {
+            "name": "Jose GR",
+            "text": "Super recomendable\nTodo perfecto\nUn 10",
+            "rating": 5,
+            "date": "2024-08-04"
+        },
+        {
+            "name": "Dara Heune",
+            "text": "Very professional , super service, and very friendly. I highly recommend Ricard as a teacher.",
+            "rating": 5,
+            "date": "2024-07-28"
+        },
+        {
+            "name": "Diego de Dueñas",
+            "text": "Gran opción para realizar prácticas del PER. Ricard es un gran profesor que puso por encima de todo nuestra seguridad. Aprendimos muchísimo y, además, pudimos ver delfines y hasta una ballena. Una gran experiencia!",
+            "rating": 5,
+            "date": "2024-07-16"
+        },
+        {
+            "name": "Gustavo Saleme",
+            "text": "Buenas, excelente escuela para iniciarse en los curso de navegación. El trato cercano y ameno, la posibilidad de preguntar todo y más y la amabilidad con que responde Ricard, en fin todo es positivo. Nuestro grupo de PER, tuvo la posibilidad de hacer baleares y fue increíble. Linda experiencia. Altamente recomendable. No lo duden.",
+            "rating": 5,
+            "date": "2024-07-09"
+        },
+        {
+            "name": "Natalia Astudillo",
+            "text": "Excelente curso teórico y práctico para poder obtener la licencia de navegación. Gracias a Ricard por compartir sus conocimientos. Lo recomiendo 200%!",
+            "rating": 5,
+            "date": "2024-07-08"
+        },
+        {
+            "name": "Sara LOSADA BALOIRA",
+            "text": "Super buena escuela. Se nota que Ricard es un apasionado del mar. Lo he pasado muy bien y se me ha hecho muy ameno. Ya tengo mi licencia de navegación. Lo recomiendo!",
+            "rating": 5,
+            "date": "2024-07-05"
+        },
+        {
+            "name": "Eloi Rodriguez Soto",
+            "text": "Una experiència molt xula! Feia molt de temps que volia fer el pas a la Llicència de navegació i vaig tindre la sort de saber de l'escola Nàutica Altair del Ricard. Ho recomano al 200%👍🏽👍🏽\nHa estat una vivència molt didàctica, molt dinàmica i amb un grup de 5 persones que no ens coneixiem. Tot i això, la manera de portar-ho, ens ha fet gaudir de la situació i el treball en equip.💪🏽\nMoltes gràcies!👌🏽",
+            "rating": 5,
+            "date": "2024-06-22"
+        },
+        {
+            "name": "Juan Moriana",
+            "text": "Experiencia increíble! Poder realizar el PER con Ricard ha sido un constante aprendizaje, su pasión y su experiencia nos lo transmitió desde el primer día. Nos lo sacamos mi pareja y yo y ha sido toda una aventura\nEn nuestro caso nos hizo buen tiempo y pudimos hacer la extensión a Baleares llegando a Mallorca y viendo delfines! Muy bonito!\n100% recomendable!",
+            "rating": 5,
+            "date": "2024-06-07"
+        },
+        {
+            "name": "Tomás Pando",
+            "text": "Muy agradecido a Ricard por acompañarnos en el nuevo mundo de la náutica. La travesía a Mallorca, sin duda, fue lo mejor.",
+            "rating": 5,
+            "date": "2024-06-06"
+        },
+        {
+            "name": "Sebas tián",
+            "text": "Excelente formación de PER! Ricard lo lleva en la sangre y transmite todo su potencial, tomé la mejor decisión, que fue pasar de las ofertas de súper MKT del mercado, para optar por esta, la mejor elección sin duda, lo recomiendo.\nUn gran profesional, a la vez que cercano y sencillo! Gracias ESCUELA NAUTICA ALTAIR & SAILING!!",
+            "rating": 5,
+            "date": "2024-05-25"
+        },
+        {
+            "name": "Estefania Sanchez Garcia",
+            "text": "Nuestra experiencia con Ricard fue excelente, nos explicó todo de manera sencilla y optima, cualquier duda que teníamos la resolvía y estaba pendiente de que no solo lo entediesemos sino que también disfrutaramos de la experiencia, se nota que es un profesional y lo hace con gusto que es un punto muy importante a tener en cuenta.\nNosotros sin duda repetiremos con el cuando tengamos que sacarnos otra titulación.",
+            "rating": 5,
+            "date": "2024-04-13"
+        },
+        {
+            "name": "Andrés Muñoz",
+            "text": "Hola muy majo Ricard  una persona con mucha experiencia y te explica todo detalladamente sin duda lo recomiendo.",
+            "rating": 5,
+            "date": "2024-04-12"
+        },
+        {
+            "name": "enrique Berbel",
+            "text": "Hola buenas!! Ha sido un día fantástico navegando por la costa de Barcelona al lado de Ricard, un profesor increíble que te enseña todo lo necesario para poder pasar un día inolvidable en un barquito o moto acuática.",
+            "rating": 5,
+            "date": "2024-04-12"
+        },
+        {
+            "name": "Stefi Curti",
+            "text": "trabajo súper profesional! no podía pedir más !!",
+            "rating": 5,
+            "date": "2024-02-09"
+        },
+        {
+            "name": "Juan Carlos Diaz Maldonado",
+            "text": "Increíble experiencia sobre un barco a vela en Barcelona... 3 días para sacar la certificación de PER a Motor...\nRicardo es un excelente profesor y capitán!\nResolvió todas las dudas y compartió sus experiencias en la mar.\nPersonalmente me ayudo con los trámites burocráticos del trámite de la licencia\nSe los recomiendo.",
+            "rating": 5,
+            "date": "2019-12-26"
+        },
+        {
+            "name": "Júlia Ros Bofarull",
+            "text": "Han sido tres intensivos días de aprendizaje. Dos días sobre el barco y otro día de radio.\nLa verdad es que estoy estudiando y no dispongo de mucho tiempo libre, así que me ha sido muy práctico sacarme el PER en la Escuela Altair, hemos podido comprimir todas las prácticas a motor en tres días.\nRicard sabe transmitir su pasión por el mar, y aprender desde la motivación siempre es más enriquecedor.\nHe tenido mucha suerte con el grupo y gracias al clima que crea Ricard, constantemente estábamos preguntando y hablando, esto favorece a un rápido aprendizaje.\n¡Gracias Ricard, gracias escuela Altair! :)",
+            "rating": 5,
+            "date": "2019-10-24"
+        },
+        {
+            "name": "Teresa Ros Bofarull",
+            "text": "Apasionado del mar, cuando sube a su velero Ricard pasa a ser un gran marinero.\nÉl sabe cómo transmitir amor y respeto por el mar.\nAtento y respetuoso, sabe comunicar lo más importante, yendo más allá de lo que sale en el examen y aportando consejos necesarios para ser un buen patrón, preparado para cualquier contratiempo.\nLe gusta compartir su conocimiento y enriquecerse dialogando con los alumnos.\nSupongo que esto es la definición de una buena lección: disfrutar escuchando, preguntando, dialogando, resolviendo problemas y aprendiendo juntos.\n¡Gracias Ricard, gracias escuela Altair!",
+            "rating": 5,
+            "date": "2019-10-24"
+        },
+        {
+            "name": "Laura Camus",
+            "text": "Durante 5 días hicimos con un compañero dos días de motor, dos días de vela y la radio. Hemos aprendido mucho. Ricard es una persona que se implica en el aprendizaje y deja que manejes desde el principio para adquirir las competencias necesarias.",
+            "rating": 5,
+            "date": "2019-10-23"
+        },
+        {
+            "name": "sergibedos",
+            "text": "Una experiència inmillorable. L'escola ofereix tracte personalitzat i proper,  facilitat per contactar i  flexibilitat per trobar horaris convinguts per fer pràctiques . La dedicació del Ricard és màxima, i durant les classes no es desaprofita ni un minut.\nEn definitiva, molt satisfet i amb ganes de tornar",
+            "rating": 5,
+            "date": "2019-10-15"
+        },
+        {
+            "name": "Juan Velasco",
+            "text": "Todo genial en las practicas de ampliacion de PER en modo travesía 24h. Navegamos desde  el port olímpic de Barcelona rumbo al Sur y regresamos tras fondear unas horas en Vilanova. Zarpamos con mal tiempo, olas y algo de lluvia, y aprendimos muchísimo de navegación. El viento nos permitió probar la navegación a vela. En general una experiencia fantástica y muy recomendable. El patrón Ricard lo explica todo y sobretodo deja que los alumnos prueben todo y realicen todas las maniobras.",
+            "rating": 5,
+            "date": "2019-05-20"
+        },
+        {
+            "name": "Ramon Pérez",
+            "text": "Un auténtico profesional. Ricard me ha enseñado y atendido a todas mis dudas sobre navegación. Volvería a realizar de nuevo los cursos pertinentes con él. Es un navegante nato.\nUtiliza una pedagogía práctica y experimental muy adecuada al perfil de alumnado y materia que imparte.",
+            "rating": 5,
+            "date": "2019-05-15"
+        },
+        {
+            "name": "David Blanco",
+            "text": "Necesitava disposar de la llicència de navegació de forma rápida i a poder ser entre setmana. (la resta d'escoles ho fan els dissabtes i diumenges).\nVaig trobar al Ricard, de la escola ALTAIR. Un profesional apassionat per  la navegació.\nVa ser una experiencia exquisida, ja desde el primer moment que hi vaig contactar. I d'un dia per l'altre, ja estava fent el curs al seu fantastic veler.\nPersonalment, recomanaría a qui tingui que realitzar formació náutica que ho fes amb el Ricard.\nPoder es un xic més car que altres escoles, però ho val. Ja que el tracte és totalment personalitzat i ja desde el primer moment estás pilotan l'embarcació tu mateix sota les seves indicacións.\n100% Recomanable, i si m'animo a fer titulacións superiors, tinc clar que ho faré amb ell.",
+            "rating": 5,
+            "date": "2019-03-28"
+        },
+        {
+            "name": "Cecilio Postigo",
+            "text": "Una experiencia impresionante. Muy recomendable navegar con Ricard ya que posee una barbaridad de experiencia y buenos consejos para disfrutar y aprender a navegar...",
+            "rating": 5,
+            "date": "2019-03-19"
+        },
+        {
+            "name": "Blanca Garcia",
+            "text": "Ricard me ayudó a prepararme el examen teórico (especialmente la parte de cartas de navegación) y me proporcionó apuntes. Buena preparación para el examen en grupos reducidos (2 personas en mi caso) y siempre trata que todos lo entendamos, explicándolo de diferentes maneras si es necesario.\nTambién realicé con el las practicas donde tuvimos la ocasión de ver los problemas del examen en una situación real. Siempre crea buen ambiente entre el grupo y posibilita la participación de todos los miembros.",
+            "rating": 5,
+            "date": "2019-03-19"
+        },
+        {
+            "name": "Hernan Militello",
+            "text": "Excelente experiencia. He realizado las prácticas de motor en dos dias, 8hs cada uno. Ricard fue el encargado de darnos las clases y no sólo hemos aprendido mucho sino que además nos lo hemos pasado muy bien. Recomendable al 100%.",
+            "rating": 5,
+            "date": "2019-03-19"
         }
     ];
 
-    // Function to display reviews (accepts array of reviews)
-    function displayReviews(reviewsToDisplay) {
-        const container = document.querySelector('.testimonials-container');
-        if (!container) return;
+    // Slider Implementation
+    const track = document.getElementById('testimonials-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
 
-        // Shuffle array
-        const shuffled = reviewsToDisplay.sort(() => 0.5 - Math.random());
-        // Get first 3
-        const selected = shuffled.slice(0, 3);
+    let currentIndex = 0;
+    let autoPlayInterval;
+    const autoPlayDelay = 5000; // 5 seconds
 
-        // Clear current content
-        container.innerHTML = '';
+    function getSlidesPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 3;
+    }
 
-        // Add selected reviews
-        selected.forEach(review => {
+    function renderAllReviews() {
+        if (!track) return;
+
+        // Sort reviews by date in descending order (newest first)
+        const sortedReviews = [...staticReviews].sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        track.innerHTML = '';
+        sortedReviews.forEach(review => {
             const card = document.createElement('div');
             card.className = 'testimonial-card';
 
@@ -259,57 +725,84 @@ document.addEventListener('DOMContentLoaded', function () {
                     <span>${review.date}</span>
                 </div>
             `;
-
-            // Add animation class
-            card.style.opacity = '0';
-            container.appendChild(card);
-
-            // Trigger animation
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease';
-                card.style.opacity = '1';
-            }, 100);
+            track.appendChild(card);
         });
     }
 
-    // Initialize with static reviews first
-    displayReviews(staticReviews);
+    function updateSliderPosition() {
+        if (!track) return;
 
-    // Global function called by Google Maps API callback
-    window.initGoogleReviews = function () {
-        // Replace YOUR_PLACE_ID with your actual Place ID
-        // You can find it here: https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
-        const PLACE_ID = 'YOUR_PLACE_ID';
+        const slidesPerView = getSlidesPerView();
+        const cardWidth = track.children[0]?.offsetWidth || 0;
+        const gap = 20; // Matches CSS gap
+        const moveAmount = (cardWidth + gap) * currentIndex;
 
-        if (PLACE_ID === 'YOUR_PLACE_ID') {
-            console.log('Google Reviews: Place ID not set. Using static reviews.');
-            return;
+        track.style.transform = `translateX(-${moveAmount}px)`;
+    }
+
+    function nextSlide() {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = staticReviews.length - slidesPerView;
+
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to start
+        }
+        updateSliderPosition();
+    }
+
+    function prevSlide() {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = staticReviews.length - slidesPerView;
+
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = maxIndex; // Loop to end
+        }
+        updateSliderPosition();
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Initialize Slider
+    if (track) {
+        renderAllReviews();
+
+        // Event Listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoPlay(); // Reset timer on interaction
+            });
         }
 
-        const mapDiv = document.createElement('div');
-        const service = new google.maps.places.PlacesService(mapDiv);
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoPlay(); // Reset timer on interaction
+            });
+        }
 
-        service.getDetails({
-            placeId: PLACE_ID,
-            fields: ['reviews']
-        }, (place, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-                console.log('Google Reviews: Fetched successfully.');
+        // Pause on hover
+        track.addEventListener('mouseenter', stopAutoPlay);
+        track.addEventListener('mouseleave', startAutoPlay);
 
-                // Transform API reviews to match our format
-                const apiReviews = place.reviews.map(review => ({
-                    name: review.author_name,
-                    text: review.text.length > 150 ? review.text.substring(0, 150) + '...' : review.text,
-                    rating: review.rating,
-                    date: review.relative_time_description
-                }));
-
-                // Update display with real reviews
-                displayReviews(apiReviews);
-            } else {
-                console.log('Google Reviews: Failed to fetch. Status:', status);
-                // Fallback is already displayed (static reviews)
-            }
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            updateSliderPosition();
         });
-    };
+
+        // Start auto-play
+        startAutoPlay();
+    }
+
 });

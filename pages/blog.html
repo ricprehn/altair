@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Náutico | Escuela Náutica Altair</title>
+    <meta name="description"
+        content="Consejos, guías y novedades sobre titulaciones náuticas, navegación y vida en el mar.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/additional-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-category {
+            color: #0077be;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: #0077be;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-anchor"></i> Escuela Náutica Altair
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="height: 40vh; min-height: 300px;">
+            <div class="hero-content">
+                <h1>Blog Náutico</h1>
+                <p>Descubre todo sobre el mundo de la navegación, consejos para tus exámenes y curiosidades del mar.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="blog-grid">
+                    <!-- Post 1 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Titulaciones</span>
+                            <h3 class="blog-title">El Duelo de Titulaciones: Licencia vs. PNB vs. PER</h3>
+                            <p class="blog-excerpt">¿Quieres empezar a navegar pero te lías con las siglas? Te ayudamos
+                                a elegir el título correcto desde el principio.</p>
+                            <a href="blog/titulaciones-comparativa.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Guía para Principiantes</span>
+                            <h3 class="blog-title">PNB vs. Licencia de Navegación: ¿Cuál es la mejor opción?</h3>
+                            <p class="blog-excerpt">Analizamos las consecuencias de elegir uno u otro para que no te
+                                arrepientas a mitad de temporada.</p>
+                            <a href="blog/pnb-vs-licencia.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Exámenes</span>
+                            <h3 class="blog-title">5 Preguntas Frecuentes sobre el Examen Teórico del PER</h3>
+                            <p class="blog-excerpt">Nuestros instructores responden a las dudas que más se repiten en
+                                clase para que vayas tranquilo al examen.</p>
+                            <a href="blog/preguntas-frecuentes-per.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Aventura</span>
+                            <h3 class="blog-title">Ampliación del PER: De 15 a 24 metros y a Baleares</h3>
+                            <p class="blog-excerpt">¿Es un simple trámite o la aventura más grande de tu vida? Descubre
+                                las ventajas de ampliar tu título.</p>
+                            <a href="blog/ampliacion-per-baleares.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Escuela</span>
+                            <h3 class="blog-title">El proceso de matrícula: del "quiero navegar" a tu primera travesía
+                            </h3>
+                            <p class="blog-excerpt">Te explicamos los 4 sencillos pasos para matricularte, prepararte y
+                                salir a navegar con nosotros.</p>
+                            <a href="blog/proceso-matricula.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Vela</span>
+                            <h3 class="blog-title">Navegar a vela: ¿Obligatorio o pasión opcional?</h3>
+                            <p class="blog-excerpt">¿Tengo que hacer prácticas de vela? La respuesta es NO, pero te
+                                contamos por qué deberías hacerlas.</p>
+                            <a href="blog/practicas-vela-obligatorias.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 7 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Legislación</span>
+                            <h3 class="blog-title">¿Puedo navegar sin título? Límites y riesgos</h3>
+                            <p class="blog-excerpt">Te explicamos dónde está la línea roja y por qué te animamos a
+                                obtener al menos la Licencia de Navegación.</p>
+                            <a href="blog/navegar-sin-titulo.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 8 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Motos de Agua</span>
+                            <h3 class="blog-title">El "Carnet de Moto de Agua": Requisitos 2024/2025</h3>
+                            <p class="blog-excerpt">Olvídate de multas y aprende cuál es la licencia mínima que
+                                necesitas para disfrutar de las motos de agua.</p>
+                            <a href="blog/carnet-moto-agua.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 9 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Estudio</span>
+                            <h3 class="blog-title">Preparación Express: Cómo aprobar el PER en un mes</h3>
+                            <p class="blog-excerpt">Nuestra Guía de Ataque Rápido para un estudio eficiente y aprobar el
+                                teórico en tiempo récord.</p>
+                            <a href="blog/aprobar-per-un-mes.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 10 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Trámites</span>
+                            <h3 class="blog-title">El Certificado Médico Náutico: Todo lo que necesitas saber</h3>
+                            <p class="blog-excerpt">Requisitos, validez y dónde obtener el certificado obligatorio para
+                                tu título náutico en Barcelona.</p>
+                            <a href="blog/certificado-medico-nautico.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Post 11 -->
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Requisitos</span>
+                            <h3 class="blog-title">La Edad de los Títulos: ¿Cuándo puedo empezar?</h3>
+                            <p class="blog-excerpt">Guía de edad mínima para Licencia, PNB y PER. ¡La náutica se puede
+                                empezar muy joven!</p>
+                            <a href="blog/edad-titulos-nauticos.html" class="read-more">Leer más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela de confianza para titulaciones náuticas en Barcelona desde 2023.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Cursos</h3>
+                <a href="../index.html#courses">PER</a>
+                <a href="../index.html#courses">Licencia de Navegación</a>
+                <a href="../index.html#courses">PNB</a>
+                <a href="servicios.html">Ampliación Baleares</a>
+                <a href="servicios.html">Prácticas de Vela</a>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

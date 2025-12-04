@@ -1,0 +1,13 @@
+option batch abort
+option confirm off
+open ftp://ricprehn:Altair2024!@ftp.altairbarcelona.com/
+lcd "c:\Users\Lionking\Documents\antigravity\altair"
+cd /htdocs
+put index.html
+cd pages
+put pages\blog.html
+mkdir blog
+cd blog
+put pages\blog\*.html
+cd /htdocs
+exit

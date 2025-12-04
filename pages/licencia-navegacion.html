@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licencia de Navegación | Escuela Náutica Altair</title>
+    <meta name="description"
+        content="Obtén tu Licencia de Navegación (Titulín) en Barcelona. Curso intensivo para principiantes. Gobierna embarcaciones de hasta 6 metros.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/additional-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .course-hero {
+            background: linear-gradient(rgba(0, 119, 190, 0.85), rgba(0, 168, 232, 0.85)), url('../images/courses/licencia-hero.jpg') center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .course-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .course-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .course-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-section ul li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .content-section ul li::before {
+            content: "\\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            margin-bottom: 1rem;
+        }
+
+        .info-box .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .includes-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .includes-list h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .course-hero h1 {
+                font-size: 2rem;
+            }
+
+            .course-hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-anchor"></i> Escuela Náutica Altair
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div>
+                <h1><i class="fas fa-sailboat"></i> Licencia de Navegación</h1>
+                <p>El curso perfecto para comenzar tu aventura náutica. Rápido, sencillo y práctico.</p>
+                <a href="contacto.html" class="cta-button">Solicitar Información</a>
+            </div>
+        </section>
+
+        <div class="course-content">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="content-section">
+                        <h2>¿Qué es la Licencia de Navegación?</h2>
+                        <p>La Licencia de Navegación, popularmente conocida como "el titulín", es el título náutico de
+                            recreo de nivel básico. Es perfecta para quienes quieren iniciarse en el mundo de la
+                            navegación sin complicaciones.</p>
+                        <p>Con esta licencia podrás gobernar embarcaciones de recreo a motor de hasta 6 metros de eslora
+                            y navegar hasta 2 millas de la costa durante el día.</p>
+
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-star"></i> Ideal para principiantes</h3>
+                            <p>Curso intensivo que puedes completar en un fin de semana. Sin complicaciones, sin
+                                matemáticas complejas, solo lo esencial para disfrutar del mar con seguridad.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>¿Qué aprenderás?</h2>
+
+                        <h3>Contenido Teórico</h3>
+                        <ul>
+                            <li>Nomenclatura náutica básica</li>
+                            <li>Elementos de seguridad del buque</li>
+                            <li>Legislación náutica esencial</li>
+                            <li>Balizamiento y señalización marítima</li>
+                            <li>Reglamento de abordajes básico</li>
+                            <li>Maniobras básicas de navegación</li>
+                            <li>Meteorología básica para navegantes</li>
+                            <li>Emergencias en el mar</li>
+                        </ul>
+
+                        <h3>Contenido Práctico</h3>
+                        <ul>
+                            <li>Preparación de la embarcación para salir a navegar</li>
+                            <li>Comprobación de los elementos de seguridad</li>
+                            <li>Arranque del motor y comprobaciones</li>
+                            <li>Maniobras de atraque y desatraque</li>
+                            <li>Gobierno de la embarcación</li>
+                            <li>Navegación básica y rumbo</li>
+                            <li>Fondeo y recogida del ancla</li>
+                            <li>Maniobras de seguridad</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Formato del Curso</h2>
+                        <p>El curso está diseñado para ser completado de forma intensiva, ideal para quienes tienen poco
+                            tiempo disponible.</p>
+
+                        <h3><i class="fas fa-book"></i> Formato Intensivo</h3>
+                        <ul>
+                            <li>Teoría: 1 día (6-8 horas)</li>
+                            <li>Prácticas: 4 horas en mar</li>
+                            <li>Grupos muy reducidos</li>
+                            <li>Atención personalizada</li>
+                        </ul>
+
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-clock"></i> Obtén tu título en un fin de semana</h3>
+                            <p>Sábado: Teoría completa<br>Domingo: Prácticas de navegación<br>¡Y listo para disfrutar
+                                del mar!</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Requisitos</h2>
+                        <ul>
+                            <li>Ser mayor de 16 años (de 16 a 18 se necesita autorización paterna)</li>
+                            <li>DNI o NIE en vigor</li>
+                            <li>No se requiere certificado médico</li>
+                            <li>No se requiere experiencia previa</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Capacitaciones</h2>
+                        <p>Con la Licencia de Navegación podrás:</p>
+                        <ul>
+                            <li>Gobernar motos de agua y embarcaciones de hasta 6 metros de eslora</li>
+                            <li>Navegar hasta 2 millas náuticas de la costa</li>
+                            <li>Navegar durante el día</li>
+                            <li>Disfrutar del mar con familia y amigos</li>
+                            <li>Alquilar embarcaciones pequeñas</li>
+                            <li>Es el primer paso hacia títulos superiores (PER, PNB)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>¿Por qué hacer la Licencia con nosotros?</h2>
+                        <ul>
+                            <li><i class="fas fa-users"></i> <strong>Grupos muy reducidos</strong> - Máxima atención
+                                personalizada</li>
+                            <li><i class="fas fa-calendar-check"></i> <strong>Horarios flexibles</strong> - Nos
+                                adaptamos a tu disponibilidad</li>
+                            <li><i class="fas fa-map-marked-alt"></i> <strong>Prácticas en Barcelona</strong> - En el
+                                entorno mediterráneo</li>
+                            <li><i class="fas fa-ship"></i> <strong>Embarcación homologada</strong> - Moderna y bien
+                                equipada</li>
+                            <li><i class="fas fa-user-tie"></i> <strong>Instructores experimentados</strong> -
+                                Apasionados por la náutica</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="info-box">
+                        <h3>Información del Curso</h3>
+                        <p class="price">Consultar precio</p>
+                        <p><i class="fas fa-clock"></i> 1 fin de semana</p>
+                        <p><i class="fas fa-calendar"></i> Inicio: Todo el año</p>
+                        <p><i class="fas fa-ship"></i> Hasta 6 metros</p>
+                        <p><i class="fas fa-water"></i> Hasta 2 millas</p>
+                        <a href="contacto.html" class="cta-button">Pedir Información</a>
+                    </div>
+
+                    <div class="includes-list">
+                        <h3>Incluye</h3>
+                        <ul class="course-details">
+                            <li><i class="fas fa-check"></i> Material didáctico</li>
+                            <li><i class="fas fa-check"></i> Teoría completa</li>
+                            <li><i class="fas fa-check"></i> Prácticas de navegación</li>
+                            <li><i class="fas fa-check"></i> Barco homologado</li>
+                            <li><i class="fas fa-check"></i> Instructor titulado</li>
+                            <li><i class="fas fa-check"></i> Seguro durante prácticas</li>
+                            <li><i class="fas fa-check"></i> Tasas de examen</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-arrow-up"></i> ¿Quieres más?</h4>
+                        <p>Después de la Licencia, puedes ampliar tus conocimientos con el <a href="per.html"
+                                style="color: var(--primary-color); font-weight: bold;">PER</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela náutica de confianza en Barcelona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Cursos</h4>
+                <ul>
+                    <li><a href="per.html">PER</a></li>
+                    <li><a href="licencia-navegacion.html">Licencia de Navegación</a></li>
+                    <li><a href="pnb.html">PNB</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@escuelanauticaaltair.com</p>
+                <p><i class="fas fa-phone"></i> +34 XXX XXX XXX</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +34 XXX XXX XXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

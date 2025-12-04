@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Escuela Náutica Altair</title>
+    <meta name="description"
+        content="Contacta con Escuela Náutica Altair en Barcelona. Solicita información sobre nuestros cursos náuticos.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/additional-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0, 119, 190, 0.9), rgba(0, 168, 232, 0.9));
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-form-container h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 119, 190, 0.3);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            height: fit-content;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-top: 0.2rem;
+        }
+
+        .contact-item div h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-color);
+        }
+
+        .contact-item div p {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .whatsapp-cta h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-cta a {
+            display: inline-block;
+            background: white;
+            color: #25d366;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .whatsapp-cta a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-anchor"></i> Escuela Náutica Altair
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div>
+                <h1><i class="fas fa-envelope"></i> Contacta con Nosotros</h1>
+                <p>¿Listo para comenzar tu aventura náutica? Estamos aquí para ayudarte</p>
+            </div>
+        </section>
+
+        <div class="contact-content">
+            <div class="contact-form-container">
+                <h2>Solicita Información</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">¿Qué curso te interesa?</label>
+                        <select id="course" name="course">
+                            <option value="">Selecciona un curso</option>
+                            <option value="per">PER - Patrón de Embarcaciones de Recreo</option>
+                            <option value="licencia">Licencia de Navegación</option>
+                            <option value="pnb">PNB - Patrón de Navegación Básica</option>
+                            <option value="ampliacion-baleares">Ampliación Baleares</option>
+                            <option value="vela">Prácticas de Vela</option>
+                            <option value="otro">Otro servicio</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" name="message" required
+                            placeholder="Cuéntanos qué necesitas..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar Consulta
+                    </button>
+                </form>
+            </div>
+
+            <div>
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@escuelanauticaaltair.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+34 XXX XXX XXX</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Barcelona, España</p>
+                            <p>Puerto deportivo - Costa mediterránea</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 - 20:00</p>
+                            <p>Sábados: 10:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="whatsapp-cta">
+                    <h3><i class="fab fa-whatsapp"></i> ¿Prefieres WhatsApp?</h3>
+                    <p style="margin-bottom: 1rem;">Escríbenos directamente y te respondemos al instante</p>
+                    <a href="https://wa.me/34XXXXXXXXX" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Abrir WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Preguntas Frecuentes sobre Inscripción</h2>
+            <div class="faq-container" style="max-width: 900px; margin: 2rem auto;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuándo puedo empezar?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ofrecemos cursos durante todo el año. Puedes empezar cuando quieras, adaptándanos a tu
+                            disponibilidad.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Necesito experiencia previa?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, no necesitas experiencia previa. Nuestros cursos están diseñados para comenzar desde
+                            cero.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué incluye el precio?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El precio incluye material didáctico, prácticas en barco homologado, instructor titulado, y
+                            seguro durante las prácticas. Las tasas de examen oficial son separadas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Ofrecen facilidades de pago?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos diferentes opciones de pago. Contáctanos para más detalles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela náutica de confianza en Barcelona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Cursos</h4>
+                <ul>
+                    <li><a href="per.html">PER</a></li>
+                    <li><a href="licencia-navegacion.html">Licencia de Navegación</a></li>
+                    <li><a href="pnb.html">PNB</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@escuelanauticaaltair.com</p>
+                <p><i class="fas fa-phone"></i> +34 XXX XXX XXX</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +34 XXX XXX XXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

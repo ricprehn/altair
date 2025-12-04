@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros | Escuela Náutica Altair</title>
+    <meta name="description"
+        content="Conoce Escuela Náutica Altair. Pasión por la navegación, instructores experimentados y flota moderna en Barcelona.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/additional-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0, 119, 190, 0.85), rgba(0, 168, 232, 0.85)), url('../images/about/barcelona-port.jpg') center/cover;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 3rem;
+        }
+
+        .content-box h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .content-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-box ul li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .content-box ul li::before {
+            content: "\\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-anchor"></i> Escuela Náutica Altair
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div>
+                <h1><i class="fas fa-ship"></i> Sobre Nosotros</h1>
+                <p>Pasión por la navegación, compromiso con la excelencia</p>
+            </div>
+        </section>
+
+        <div class="page-content">
+            <div class="content-box">
+                <h2>Nuestra Historia</h2>
+                <p>Escuela Náutica Altair nace de la pasión por el mar y el deseo de compartir la experiencia de la
+                    navegación con todos aquellos que sueñan con surcar las aguas del Mediterráneo.</p>
+                <p>Ubicados en Barcelona, ofrecemos formación náutica de calidad con un enfoque personalizado y
+                    profesional. Nos especializamos en titulaciones náuticas recreativas, desde la Licencia de
+                    Navegación hasta el PER y sus ampliaciones.</p>
+                <p>Nuestro compromiso es formar navegantes competentes y seguros, capaces de disfrutar del mar con
+                    responsabilidad y autonomía.</p>
+            </div>
+
+            <div class="content-box">
+                <h2>Nuestro Instructor - Ricard Prehn</h2>
+                <p><strong>Ricard</strong> es el alma de Escuela Náutica Altair. Navegante apasionado con años de
+                    experiencia surcando los mares, ha cruzado el Atlántico a vela y ha navegado por numerosas costas
+                    del mundo.</p>
+
+                <h3>Experiencia y Titulaciones</h3>
+                <ul>
+                    <li>Capitán de Yate (título profesional más alto)</li>
+                    <li>Años de experiencia como instructor náutico</li>
+                    <li>Navegación oceánica y costera</li>
+                    <li>Especialista en navegación a vela</li>
+                    <li>Experto en electrónica náutica</li>
+                </ul>
+
+                <h3>Filosofía de Enseñanza</h3>
+                <p>Ricard cree firmemente que la náutica debe ser accesible para todos. Su metodología se basa en:</p>
+                <ul>
+                    <li>Enseñanza práctica y cercana</li>
+                    <li>Adaptación a cada alumno</li>
+                    <li>Grupos muy reducidos para máxima atención</li>
+                    <li>Transmitir no solo conocimientos, sino pasión por el mar</li>
+                    <li>Seguridad siempre en primer lugar</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h2>Nuestra Flota</h2>
+                <p>Contamos con embarcaciones modernas, homologadas y perfectamente equipadas para la formación náutica:
+                </p>
+
+                <ul>
+                    <li><strong>Embarcaciones a motor:</strong> Para prácticas de PER, PNB y Licencia de Navegación</li>
+                    <li><strong>Veleros:</strong> Para prácticas de vela y extensión a vela del PER</li>
+                    <li><strong>Equipamiento completo:</strong> GPS, plotter, radio VHF, elementos de seguridad
+                        homologados</li>
+                    <li><strong>Mantenimiento riguroso:</strong> Todas las embarcaciones revisadas y actualizadas</li>
+                    <li><strong>Confort y seguridad:</strong> Espacios adecuados para el aprendizaje</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h2>Nuestros Valores</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Pasión</h3>
+                        <p>Amamos el mar y transmitimos esa pasión en cada clase</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Seguridad</h3>
+                        <p>La seguridad siempre es nuestra máxima prioridad</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Cercanía</h3>
+                        <p>Trato personalizado y grupos muy reducidos</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Excelencia</h3>
+                        <p>Formación de la más alta calidad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h2>¿Por Qué Elegirnos?</h2>
+                <ul>
+                    <li><strong>Experiencia real:</strong> Nuestro instructor ha vivido el mar, no solo lo enseña</li>
+                    <li><strong>Grupos reducidos:</strong> Máximo 7 alumnos por barco, garantizamos atención
+                        personalizada</li>
+                    <li><strong>Flexibilidad:</strong> Horarios adaptados a tu disponibilidad</li>
+                    <li><strong>Ubicación privilegiada:</strong> Barcelona y la costa mediterránea</li>
+                    <li><strong>Metodología práctica:</strong> Aprendes haciendo, no solo estudiando</li>
+                    <li><strong>Trato humano:</strong> No eres un número, eres parte de nuestra familia náutica</li>
+                    <li><strong>Seguimiento completo:</strong> Desde el primer día hasta que obtienes tu título</li>
+                    <li><strong>Pasión por la enseñanza:</strong> Nos importa que aprendas y disfrutes</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h2>Testimonios de Nuestros Alumnos</h2>
+                <p>Con más de 85 reseñas de 5 estrellas en Google, nuestros alumnos respaldan nuestra calidad:</p>
+                <blockquote
+                    style="border-left: 4px solid var(--secondary-color); padding-left: 1.5rem; font-style: italic; margin: 2rem 0;">
+                    "Ricard es un instructor fantástico. Explica todo con mucha claridad y paciencia. Las prácticas de
+                    vela fueron increíbles. Sin duda volveré para ampliar mi titulación."
+                </blockquote>
+                <blockquote
+                    style="border-left: 4px solid var(--secondary-color); padding-left: 1.5rem; font-style: italic; margin: 2rem 0;">
+                    "Experiencia increíble! Poder realizar el PER con Ricard ha sido un constante aprendizaje, su pasión
+                    y su experiencia nos lo transmitió desde el primer día."
+                </blockquote>
+                <a href="../index.html#testimonials" class="cta-button">Ver Más Reseñas</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela náutica de confianza en Barcelona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Cursos</h4>
+                <ul>
+                    <li><a href="per.html">PER</a></li>
+                    <li><a href="licencia-navegacion.html">Licencia de Navegación</a></li>
+                    <li><a href="pnb.html">PNB</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@escuelanauticaaltair.com</p>
+                <p><i class="fas fa-phone"></i> +34 XXX XXX XXX</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +34 XXX XXX XXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

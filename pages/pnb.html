@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNB - Patrón de Navegación Básica | Escuela Náutica Altair</title>
+    <meta name="description"
+        content="Obtén tu título PNB en Barcelona. Gobierna embarcaciones de hasta 8 metros. Navegación costera hasta 5 millas. Formación completa para el Mediterráneo.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/additional-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .course-hero {
+            background: linear-gradient(rgba(0, 119, 190, 0.85), rgba(0, 168, 232, 0.85)), url('../images/courses/pnb-hero.jpg') center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .course-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .course-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .course-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-section ul li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .content-section ul li::before {
+            content: "\\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            margin-bottom: 1rem;
+        }
+
+        .info-box .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .includes-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .includes-list h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .course-hero h1 {
+                font-size: 2rem;
+            }
+
+            .course-hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-anchor"></i> Escuela Náutica Altair
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div>
+                <h1><i class="fas fa-water"></i> PNB - Patrón de Navegación Básica</h1>
+                <p>Navegación costera con autonomía. El paso intermedio perfecto entre la Licencia y el PER.</p>
+                <a href="contacto.html" class="cta-button">Solicitar Información</a>
+            </div>
+        </section>
+
+        <div class="course-content">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="content-section">
+                        <h2>¿Qué es el PNB?</h2>
+                        <p>El Patrón de Navegación Básica (PNB) es un título náutico de recreo de nivel intermedio,
+                            perfecto para quienes ya tienen alguna experiencia náutica o quieren dar un paso más allá de
+                            la Licencia de Navegación.</p>
+                        <p>Con el PNB podrás gobernar embarcaciones de hasta 8 metros de eslora y navegar hasta 5 millas
+                            de la costa durante el día. Es ideal para navegación costera recreativa en el Mediterráneo.
+                        </p>
+
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-star"></i> El término medio perfecto</h3>
+                            <p>Más capacitaciones que la Licencia de Navegación, pero sin la complejidad del PER. Ideal
+                                si buscas navegar cerca de la costa con embarcaciones medianas.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>¿Qué aprenderás?</h2>
+
+                        <h3>Contenido Teórico</h3>
+                        <ul>
+                            <li>Nomenclatura náutica y elementos del buque</li>
+                            <li>Seguridad en la navegación</li>
+                            <li>Legislación náutica básica</li>
+                            <li>Balizamiento y señales marítimas</li>
+                            <li>Reglamento Internacional de Abordajes (RIPA)</li>
+                            <li>Maniobras básicas de navegación</li>
+                            <li>Meteorología náutica básica</li>
+                            <li>Conceptos básicos de navegación costera</li>
+                            <li>Emergencias en el mar</li>
+                            <li>Motores y elementos de propulsión</li>
+                        </ul>
+
+                        <h3>Contenido Práctico</h3>
+                        <ul>
+                            <li>Preparación y revisión de la embarcación</li>
+                            <li>Comprobación de elementos de seguridad</li>
+                            <li>Maniobras de atraque y desatraque</li>
+                            <li>Gobierno de la embarcación y navegación</li>
+                            <li>Maniobras de fondeo</li>
+                            <li>Amarre a boyas</li>
+                            <li>Navegación costera básica</li>
+                            <li>Maniobras de seguridad y emergencia</li>
+                            <li>Maniobra de hombre al agua</li>
+                            <li>Uso de elementos de seguridad</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Formato del Curso</h2>
+
+                        <h3><i class="fas fa-book"></i> Teoría</h3>
+                        <ul>
+                            <li>Modalidad presencial u online</li>
+                            <li>Material didáctico incluido</li>
+                            <li>Apoyo de instructor</li>
+                            <li>Preparación completa para el examen</li>
+                        </ul>
+
+                        <h3><i class="fas fa-ship"></i> Prácticas de Navegación</h3>
+                        <ul>
+                            <li>8 horas de prácticas en mar</li>
+                            <li>Grupos reducidos (máximo 7 alumnos)</li>
+                            <li>Embarcación homologada</li>
+                            <li>Instructor titulado y experimentado</li>
+                            <li>Horarios flexibles</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Requisitos</h2>
+                        <ul>
+                            <li>Ser mayor de 18 años</li>
+                            <li>DNI o NIE en vigor</li>
+                            <li>Certificado médico náutico</li>
+                            <li>No se requiere experiencia previa (aunque es recomendable)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Capacitaciones que obtienes</h2>
+                        <p>Con el título de Patrón de Navegación Básica podrás:</p>
+                        <ul>
+                            <li>Gobernar embarcaciones de recreo de hasta 8 metros de eslora</li>
+                            <li>Navegar hasta 5 millas náuticas de la costa</li>
+                            <li>Navegar durante el día (de sol a sol)</li>
+                            <li>Navegar por aguas interiores</li>
+                            <li>Alquilar embarcaciones medianas</li>
+                            <li>Disfrutar de la navegación costera con autonomía</li>
+                        </ul>
+
+                        <div class="highlight-box">
+                            <h3><i class="fas fa-compass"></i> Perfecto para el Mediterráneo</h3>
+                            <p>5 millas de autonomía te permiten explorar la costa catalana, hacer excursiones de un
+                                día, y disfrutar plenamente del litoral mediterráneo.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Diferencias con otros títulos</h2>
+
+                        <h3>vs. Licencia de Navegación</h3>
+                        <ul>
+                            <li>✓ Embarcaciones más grandes (8m vs 6m)</li>
+                            <li>✓ Más autonomía (5 millas vs 2 millas)</li>
+                            <li>✓ Formación más completa</li>
+                            <li>✓ Más horas de práctica</li>
+                        </ul>
+
+                        <h3>vs. PER</h3>
+                        <ul>
+                            <li>• Curso más corto y asequible</li>
+                            <li>• Solo navegación diurna (no nocturna)</li>
+                            <li>• Embarcaciones hasta 8m (vs 15/24m del PER)</li>
+                            <li>• Limite de 5 millas (vs 12 millas del PER)</li>
+                            <li>• Ideal si no necesitas grandes embarcaciones</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>¿Por qué hacer el PNB con nosotros?</h2>
+                        <ul>
+                            <li><i class="fas fa-users"></i> <strong>Grupos reducidos</strong> - Máxima atención
+                                personalizada</li>
+                            <li><i class="fas fa-calendar-check"></i> <strong>Horarios flexibles</strong> - Adaptados a
+                                tu disponibilidad</li>
+                            <li><i class="fas fa-map-marked-alt"></i> <strong>Prácticas en Barcelona</strong> - Costa
+                                mediterránea</li>
+                            <li><i class="fas fa-ship"></i> <strong>Embarcación moderna</strong> - Bien equipada y
+                                mantenida</li>
+                            <li><i class="fas fa-user-tie"></i> <strong>Instructores expertos</strong> - Apasionados de
+                                la náutica</li>
+                            <li><i class="fas fa-graduation-cap"></i> <strong>Alta tasa de aprobados</strong> -
+                                Preparación completa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="info-box">
+                        <h3>Información del Curso</h3>
+                        <p class="price">Consultar precio</p>
+                        <p><i class="fas fa-clock"></i> Duración flexible</p>
+                        <p><i class="fas fa-calendar"></i> Inicio: Todo el año</p>
+                        <p><i class="fas fa-ship"></i> Hasta 8 metros</p>
+                        <p><i class="fas fa-water"></i> Hasta 5 millas</p>
+                        <p><i class="fas fa-sun"></i> Navegación diurna</p>
+                        <a href="contacto.html" class="cta-button">Pedir Información</a>
+                    </div>
+
+                    <div class="includes-list">
+                        <h3>Incluye</h3>
+                        <ul class="course-details">
+                            <li><i class="fas fa-check"></i> Material didáctico</li>
+                            <li><i class="fas fa-check"></i> Teoría completa</li>
+                            <li><i class="fas fa-check"></i> 8h de prácticas</li>
+                            <li><i class="fas fa-check"></i> Barco homologado</li>
+                            <li><i class="fas fa-check"></i> Instructor titulado</li>
+                            <li><i class="fas fa-check"></i> Seguro durante prácticas</li>
+                            <li><i class="fas fa-check"></i> Preparación examen</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-arrow-up"></i> ¿Quieres ampliar?</h4>
+                        <p>Si después quieres más autonomía y embarcaciones más grandes, puedes continuar con el <a
+                                href="per.html" style="color: var(--primary-color); font-weight: bold;">PER</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela náutica de confianza en Barcelona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Cursos</h4>
+                <ul>
+                    <li><a href="per.html">PER</a></li>
+                    <li><a href="licencia-navegacion.html">Licencia de Navegación</a></li>
+                    <li><a href="pnb.html">PNB</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@escuelanauticaaltair.com</p>
+                <p><i class="fas fa-phone"></i> +34 XXX XXX XXX</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +34 XXX XXX XXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas y Respuestas | Escuela Náutica Altair</title>
+    <meta name="description"
+        content="Resuelve tus dudas sobre títulos náuticos, prácticas y navegación. Pregunta directamente a nuestros instructores.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/additional-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .qa-hero {
+            background: linear-gradient(rgba(0, 61, 91, 0.8), rgba(0, 119, 190, 0.8)), url('../images/qa-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .qa-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .qa-search-box {
+            margin-top: 2rem;
+            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .qa-search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .qa-search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+
+        .qa-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .qa-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .qa-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .qa-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 119, 190, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .qa-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .qa-question i {
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .qa-item.active .qa-question i {
+            transform: rotate(180deg);
+        }
+
+        .qa-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #555;
+            line-height: 1.6;
+            background-color: #f9fbfd;
+        }
+
+        .qa-item.active .qa-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+            /* Altura suficiente */
+            border-top: 1px solid #eee;
+        }
+
+        .qa-sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .ask-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .ask-form input,
+        .ask-form textarea,
+        .ask-form select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .ask-form button {
+            width: 100%;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .ask-form button:hover {
+            background: var(--primary-color);
+        }
+
+        .expert-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .expert-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            /* Placeholder */
+            background-image: url('../images/instructor-ricard.jpg');
+            /* Asumiendo que existe o usar icono */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .expert-info h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--dark-color);
+        }
+
+        .expert-info span {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .qa-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .qa-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">
+                    <i class="fas fa-anchor"></i> Escuela Náutica Altair
+                </a>
+            </div>
+                        <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="calendario.html">Calendario</a>
+                <a href="blog.html">Blog</a>
+                <a href="preguntas.html">Preguntas</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="qa-hero">
+            <h1>Centro de Dudas Náuticas</h1>
+            <p>Resolvemos tus inquietudes sobre titulaciones, mar y navegación.</p>
+            <div class="qa-search-box">
+                <input type="text" id="qaSearch"
+                    placeholder="¿Qué quieres saber? (ej. caducidad PER, prácticas vela...)">
+                <i class="fas fa-search"></i>
+            </div>
+        </section>
+
+        <div class="qa-container">
+            <div class="qa-grid">
+                <!-- Lista de Preguntas -->
+                <div class="qa-list" id="qaList">
+
+                    <!-- Categoría: Titulaciones -->
+                    <div class="qa-category-title"
+                        style="color: var(--secondary-color); font-weight: 700; margin-top: 1rem;">Sobre Titulaciones
+                        (PER, PNB, Licencia)</div>
+
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            ¿Caducan los títulos náuticos como el PER?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="qa-answer">
+                            <p>Sí, los títulos náuticos de recreo tienen una validez de <strong>10 años</strong>. Una
+                                vez transcurrido este tiempo, debes renovarlos. Si tienes más de 70 años, la renovación
+                                debe hacerse cada 5 años. Para renovar, solo necesitas un certificado médico psicofísico
+                                y pagar las tasas correspondientes; no es necesario volver a examinarse.</p>
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            ¿Puedo navegar en otros países con mi título español?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="qa-answer">
+                            <p>En general, sí. Los títulos españoles son reconocidos en la mayoría de países para el
+                                alquiler de embarcaciones de recreo, especialmente en la Unión Europea y destinos
+                                turísticos habituales. Sin embargo, si vas a residir en otro país o navegar con bandera
+                                extranjera, la normativa puede variar. Recomendamos siempre consultar con la autoridad
+                                marítima local o la empresa de chárter.</p>
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            ¿Qué diferencia hay entre PNB y PER?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="qa-answer">
+                            <p>La principal diferencia radica en las atribuciones. El <strong>PNB</strong> permite
+                                barcos de hasta 8 metros y alejarte 5 millas de la costa. El <strong>PER</strong>
+                                permite hasta 15 metros (24m con prácticas) y navegar hasta 12 millas (o cruzar a
+                                Baleares). Si tu objetivo es navegar entre islas o barcos más grandes, el PER es la
+                                opción recomendada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Categoría: Prácticas -->
+                    <div class="qa-category-title"
+                        style="color: var(--secondary-color); font-weight: 700; margin-top: 1rem;">Sobre las Prácticas
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            ¿Es obligatorio aprobar el examen teórico antes de las prácticas?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="qa-answer">
+                            <p>No, no es obligatorio. Puedes realizar las prácticas antes, durante o después de aprobar
+                                el examen teórico. Tienes un plazo de 24 meses (2 años) para completar todo el
+                                expediente (teoría + prácticas) desde que apruebas o realizas la primera actividad.</p>
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            ¿En qué consisten las prácticas de seguridad y navegación?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="qa-answer">
+                            <p>Son salidas al mar donde aplicamos la teoría. Practicamos maniobras de atraque y
+                                desatraque, fondeo, hombre al agua, navegación con GPS y carta, y gestión de
+                                emergencias. En Altair, nos enfocamos en que realmente cojas el timón y aprendas a
+                                sentir el barco, no solo a cumplir las horas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Categoría: Vida a Bordo -->
+                    <div class="qa-category-title"
+                        style="color: var(--secondary-color); font-weight: 700; margin-top: 1rem;">Vida a Bordo y
+                        Consejos</div>
+
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Me mareo fácilmente, ¿puedo navegar?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="qa-answer">
+                            <p>¡Por supuesto! El mareo es muy común, incluso entre marineros experimentados. Existen
+                                trucos efectivos: mirar al horizonte, evitar entrar en cabina, mantenerse hidratado y
+                                comer algo seco (como galletas saladas). También hay medicación preventiva (biodramina
+                                con cafeína) que funciona muy bien si se toma antes de salir. Con el tiempo, el cuerpo
+                                se acostumbra ("piernas de mar").</p>
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            ¿Qué ropa debo llevar para las prácticas?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="qa-answer">
+                            <p>Depende de la época del año. Siempre recomendamos llevar capas. Imprescindible: calzado
+                                de suela blanca o clara (náuticos o deportivas) que no resbale y que no marque la
+                                cubierta. En invierno, ropa térmica y cortavientos impermeable. En verano, gorra, gafas
+                                de sol y protección solar son vitales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar: Formulario -->
+                <aside class="qa-sidebar">
+                    <div class="expert-badge">
+                        <div class="expert-avatar">
+                            <i class="fas fa-user-captain" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div class="expert-info">
+                            <h4>Ricard Prehn</h4>
+                            <span>Instructor Jefe</span>
+                        </div>
+                    </div>
+
+                    <div class="ask-form">
+                        <h3>¿No encuentras tu duda?</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #666;">Pregúntame directamente. Intento
+                            responder en menos de 24h.</p>
+                        <form id="questionForm">
+                            <input type="text" placeholder="Tu Nombre" required>
+                            <input type="email" placeholder="Tu Email" required>
+                            <select>
+                                <option value="general">Duda General</option>
+                                <option value="per">Sobre el PER</option>
+                                <option value="practicas">Sobre Prácticas</option>
+                                <option value="administrativo">Trámites</option>
+                            </select>
+                            <textarea rows="4" placeholder="Escribe tu pregunta aquí..." required></textarea>
+                            <button type="submit">Enviar Pregunta <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela náutica de confianza en Barcelona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Legales</h4>
+                <ul>
+                    <li><a href="legal.html">Aviso Legal</a></li>
+                    <li><a href="legal.html#privacidad">Privacidad</a></li>
+                    <li><a href="legal.html#cookies">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@escuelanauticaaltair.com</p>
+                <p><i class="fas fa-phone"></i> +34 XXX XXX XXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Script específico para la funcionalidad de acordeón y búsqueda
+        document.addEventListener('DOMContentLoaded', function () {
+            // Acordeón
+            const qaItems = document.querySelectorAll('.qa-item');
+
+            qaItems.forEach(item => {
+                const question = item.querySelector('.qa-question');
+                question.addEventListener('click', () => {
+                    // Cerrar otros
+                    qaItems.forEach(other => {
+                        if (other !== item) other.classList.remove('active');
+                    });
+                    // Toggle actual
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Búsqueda en tiempo real
+            const searchInput = document.getElementById('qaSearch');
+            const qaList = document.getElementById('qaList');
+            const items = qaList.querySelectorAll('.qa-item');
+
+            searchInput.addEventListener('input', function (e) {
+                const term = e.target.value.toLowerCase();
+
+                items.forEach(item => {
+                    const question = item.querySelector('.qa-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.qa-answer').textContent.toLowerCase();
+
+                    if (question.includes(term) || answer.includes(term)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+
+            // Simulación de envío de formulario
+            const form = document.getElementById('questionForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('¡Gracias por tu pregunta! Ricard te responderá pronto al email facilitado.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

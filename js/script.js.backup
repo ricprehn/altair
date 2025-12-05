@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Google Reviews Logic (Simplified for brevity, full data preserved in backup if needed)
+    // Google Reviews Logic
     const staticReviews = [
         {
             "name": "Daniel G J",
@@ -800,6 +800,202 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('resize', () => {
             updateSliderPosition();
         });
+        ```javascript
+        {
+            "name": "Stefi Curti",
+            "text": "trabajo súper profesional! no podía pedir más !!",
+            "rating": 5,
+            "date": "2024-02-09"
+        },
+        {
+            "name": "Juan Carlos Diaz Maldonado",
+            "text": "Increíble experiencia sobre un barco a vela en Barcelona... 3 días para sacar la certificación de PER a Motor...\nRicardo es un excelente profesor y capitán!\nResolvió todas las dudas y compartió sus experiencias en la mar.\nPersonalmente me ayudo con los trámites burocráticos del trámite de la licencia\nSe los recomiendo.",
+            "rating": 5,
+            "date": "2019-12-26"
+        },
+        {
+            "name": "Júlia Ros Bofarull",
+            "text": "Han sido tres intensivos días de aprendizaje. Dos días sobre el barco y otro día de radio.\nLa verdad es que estoy estudiando y no dispongo de mucho tiempo libre, así que me ha sido muy práctico sacarme el PER en la Escuela Altair, hemos podido comprimir todas las prácticas a motor en tres días.\nRicard sabe transmitir su pasión por el mar, y aprender desde la motivación siempre es más enriquecedor.\nHe tenido mucha suerte con el grupo y gracias al clima que crea Ricard, constantemente estábamos preguntando y hablando, esto favorece a un rápido aprendizaje.\n¡Gracias Ricard, gracias escuela Altair! :)",
+            "rating": 5,
+            "date": "2019-10-24"
+        },
+        {
+            "name": "Teresa Ros Bofarull",
+            "text": "Apasionado del mar, cuando sube a su velero Ricard pasa a ser un gran marinero.\nÉl sabe cómo transmitir amor y respeto por el mar.\nAtento y respetuoso, sabe comunicar lo más importante, yendo más allá de lo que sale en el examen y aportando consejos necesarios para ser un buen patrón, preparado para cualquier contratiempo.\nLe gusta compartir su conocimiento y enriquecerse dialogando con los alumnos.\nSupongo que esto es la definición de una buena lección: disfrutar escuchando, preguntando, dialogando, resolviendo problemas y aprendiendo juntos.\n¡Gracias Ricard, gracias escuela Altair!",
+            "rating": 5,
+            "date": "2019-10-24"
+        },
+        {
+            "name": "Laura Camus",
+            "text": "Durante 5 días hicimos con un compañero dos días de motor, dos días de vela y la radio. Hemos aprendido mucho. Ricard es una persona que se implica en el aprendizaje y deja que manejes desde el principio para adquirir las competencias necesarias.",
+            "rating": 5,
+            "date": "2019-10-23"
+        },
+        {
+            "name": "sergibedos",
+            "text": "Una experiència inmillorable. L'escola ofereix tracte personalitzat i proper,  facilitat per contactar i  flexibilitat per trobar horaris convinguts per fer pràctiques . La dedicació del Ricard és màxima, i durant les classes no es desaprofita ni un minut.\nEn definitiva, molt satisfet i amb ganes de tornar",
+            "rating": 5,
+            "date": "2019-10-15"
+        },
+        {
+            "name": "Juan Velasco",
+            "text": "Todo genial en las practicas de ampliacion de PER en modo travesía 24h. Navegamos desde  el port olímpic de Barcelona rumbo al Sur y regresamos tras fondear unas horas en Vilanova. Zarpamos con mal tiempo, olas y algo de lluvia, y aprendimos muchísimo de navegación. El viento nos permitió probar la navegación a vela. En general una experiencia fantástica y muy recomendable. El patrón Ricard lo explica todo y sobretodo deja que los alumnos prueben todo y realicen todas las maniobras.",
+            "rating": 5,
+            "date": "2019-05-20"
+        },
+        {
+            "name": "Ramon Pérez",
+            "text": "Un auténtico profesional. Ricard me ha enseñado y atendido a todas mis dudas sobre navegación. Volvería a realizar de nuevo los cursos pertinentes con él. Es un navegante nato.\nUtiliza una pedagogía práctica y experimental muy adecuada al perfil de alumnado y materia que imparte.",
+            "rating": 5,
+            "date": "2019-05-15"
+        },
+        {
+            "name": "David Blanco",
+            "text": "Necesitava disposar de la llicència de navegació de forma rápida i a poder ser entre setmana. (la resta d'escoles ho fan els dissabtes i diumenges).\nVaig trobar al Ricard, de la escola ALTAIR. Un profesional apassionat per  la navegació.\nVa ser una experiencia exquisita, ja desde el primer moment que hi vaig contactar. I d'un dia per l'altre, ja estava fent el curs al seu fantastic veler.\nPersonalment, recomanaría a qui tingui que realitzar formació náutica que ho fes amb el Ricard.\nPoder es un xic més car que altres escoles, però ho val. Ja que el tracte és totalment personalitzat i ja desde el primer moment estás pilotan l'embarcació tu mateix sota les seves indicacións.\n100% Recomanable, i si m'animo a fer titulacións superiors, tinc clar que ho faré amb ell.",
+            "rating": 5,
+            "date": "2019-03-28"
+        },
+        {
+            "name": "Cecilio Postigo",
+            "text": "Una experiencia impresionante. Muy recomendable navegar con Ricard ya que posee una barbaridad de experiencia y buenos consejos para disfrutar y aprender a navegar...",
+            "rating": 5,
+            "date": "2019-03-19"
+        },
+        {
+            "name": "Blanca Garcia",
+            "text": "Ricard me ayudó a prepararme el examen teórico (especialmente la parte de cartas de navegación) y me proporcionó apuntes. Buena preparación para el examen en grupos reducidos (2 personas en mi caso) y siempre trata que todos lo entendamos, explicándolo de diferentes maneras si es necesario.\nTambién realicé con el las practicas donde tuvimos la ocasión de ver los problemas del examen en una situación real. Siempre crea buen ambiente entre el grupo y posibilita la participación de todos los miembros.",
+            "rating": 5,
+            "date": "2019-03-19"
+        },
+        {
+            "name": "Hernan Militello",
+            "text": "Excelente experiencia. He realizado las prácticas de motor en dos dias, 8hs cada uno. Ricard fue el encargado de darnos las clases y no sólo hemos aprendido mucho sino que además nos lo hemos pasado muy bien. Recomendable al 100%.",
+            "rating": 5,
+            "date": "2019-03-19"
+        }
+    ];
+
+    // Slider Implementation
+    const track = document.getElementById('testimonials-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+    const autoPlayDelay = 5000; // 5 seconds
+
+    function getSlidesPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 3;
+    }
+
+    function renderAllReviews() {
+        if (!track) return;
+
+        // Sort reviews by date in descending order (newest first)
+        const sortedReviews = [...staticReviews].sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        track.innerHTML = '';
+        sortedReviews.forEach(review => {
+            const card = document.createElement('div');
+            card.className = 'testimonial-card';
+
+            // Create stars HTML
+            let starsHtml = '';
+            for (let i = 0; i < 5; i++) {
+                if (i < review.rating) {
+                    starsHtml += '<i class="fas fa-star"></i>';
+                } else {
+                    starsHtml += '<i class="far fa-star"></i>';
+                }
+            }
+
+            card.innerHTML = `
+            < div class="stars" > ${ starsHtml }</div >
+                <p>"${review.text}"</p>
+                <div class="testimonial-author">
+                    <strong>${review.name}</strong>
+                    <span>${review.date}</span>
+                </div>
+        `;
+            track.appendChild(card);
+        });
+    }
+
+    function updateSliderPosition() {
+        if (!track) return;
+
+        const slidesPerView = getSlidesPerView();
+        const cardWidth = track.children[0]?.offsetWidth || 0;
+        const gap = 20; // Matches CSS gap
+        const moveAmount = (cardWidth + gap) * currentIndex;
+
+        track.style.transform = `translateX(-${ moveAmount }px)`;
+    }
+
+    function nextSlide() {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = staticReviews.length - slidesPerView;
+
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to start
+        }
+        updateSliderPosition();
+    }
+
+    function prevSlide() {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = staticReviews.length - slidesPerView;
+
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = maxIndex; // Loop to end
+        }
+        updateSliderPosition();
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Initialize Slider
+    if (track) {
+        renderAllReviews();
+
+        // Event Listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoPlay(); // Reset timer on interaction
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoPlay(); // Reset timer on interaction
+            });
+        }
+
+        // Pause on hover
+        track.addEventListener('mouseenter', stopAutoPlay);
+        track.addEventListener('mouseleave', startAutoPlay);
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            updateSliderPosition();
+        });
 
         // Start auto-play
         startAutoPlay();
@@ -831,7 +1027,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Lazy Loading for Images
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-
+    
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -850,3 +1046,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+```

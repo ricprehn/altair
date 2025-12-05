@@ -1,0 +1,779 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu Curso | Escuela Náutica Altair</title>
+    <meta name="description" content="Reserva tu curso náutico en Barcelona. Sistema de reservas fácil y rápido.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .booking-container {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 2rem;
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        .progress-bar .progress-fill {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+            z-index: 1;
+        }
+
+        .step-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .step-indicator.active .step-circle {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .step-indicator.completed .step-circle {
+            border-color: #4caf50;
+            background: #4caf50;
+            color: white;
+        }
+
+        .step-label {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .step-indicator.active .step-label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .booking-step {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .booking-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .course-option {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .course-option:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 20px rgba(0, 119, 190, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .course-option.selected {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.05), rgba(0, 168, 232, 0.05));
+        }
+
+        .course-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .course-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .course-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .course-duration {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .course-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .course-price-label {
+            font-size: 0.75rem;
+            color: #999;
+            display: block;
+        }
+
+        .calendar-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-month {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .calendar-nav button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-nav button:hover {
+            background: var(--accent-color);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: 600;
+            color: #666;
+            padding: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .calendar-day:not(.disabled):hover {
+            background: rgba(0, 119, 190, 0.1);
+        }
+
+        .calendar-day.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .calendar-day.available {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .calendar-day.few-spots {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .calendar-day.selected {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 700;
+        }
+
+        .calendar-day.available::after,
+        .calendar-day.few-spots::after {
+            content: '';
+            position: absolute;
+            bottom: 3px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .confirmation-box {
+            background: linear-gradient(135deg, #0077be, #00a8e8);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .confirmation-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .confirmation-details {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .detail-value {
+            font-weight: 600;
+        }
+
+        .total-price {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background: #e65100;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            color: #4caf50;
+            margin-bottom: 1rem;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .success-text {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">
+                    <i class="fas fa-anchor"></i> Escuela Náutica Altair
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="calendario.html">Calendario</a>
+                <a href="blog.html">Blog</a>
+                <a href="preguntas.html">Preguntas</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="booking-container">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <div class="step-indicator active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Curso</div>
+                </div>
+                <div class="step-indicator" data-step="2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Fecha</div>
+                </div>
+                <div class="step-indicator" data-step="3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Datos</div>
+                </div>
+                <div class="step-indicator" data-step="4">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Confirmar</div>
+                </div>
+            </div>
+
+            <!-- Step 1: Select Course -->
+            <div class="booking-step active" id="step1">
+                <h2 style="text-align: center; margin-bottom: 1rem; color: var(--dark-color);">¿Qué curso quieres hacer?
+                </h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">Selecciona el curso que más te interese
+                </p>
+
+                <div class="course-grid">
+                    <div class="course-option" data-course="licencia" data-price="95" data-duration="1 día (6h)">
+                        <div class="course-icon">🚤</div>
+                        <div class="course-title">Licencia de Navegación</div>
+                        <div class="course-description">Gobierna embarcaciones hasta 6m. Ideal para motos náuticas y
+                            barcos pequeños.</div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 1 día (6h)</span>
+                            <div>
+                                <span class="course-price-label">desde</span>
+                                <span class="course-price">95€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="per-practicas" data-price="360"
+                        data-duration="2 días (16h)">
+                        <div class="course-icon">⛵</div>
+                        <div class="course-title">PER - Solo Prácticas Motor</div>
+                        <div class="course-description">16h de prácticas de navegación y seguridad. Perfecto si ya
+                            aprobaste la teoría.</div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 2 días (16h)</span>
+                            <div>
+                                <span class="course-price-label">desde</span>
+                                <span class="course-price">360€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="per-completo" data-price="850" data-duration="Flexible">
+                        <div class="course-icon">🚢</div>
+                        <div class="course-title">PER Completo (Teoría + Prácticas)</div>
+                        <div class="course-description">Curso completo: teoría online/presencial + prácticas motor. Todo
+                            incluido.</div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> Flexible</span>
+                            <div>
+                                <span class="course-price-label">desde</span>
+                                <span class="course-price">850€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="vela" data-price="450" data-duration="16h">
+                        <div class="course-icon">⛵</div>
+                        <div class="course-title">Ampliación Vela</div>
+                        <div class="course-description">Aprende a patronear veleros. Incluye 16h de navegación a vela.
+                        </div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 16 horas</span>
+                            <div>
+                                <span class="course-price-label">desde</span>
+                                <span class="course-price">450€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="baleares" data-price="550" data-duration="24h navegación">
+                        <div class="course-icon">🧭</div>
+                        <div class="course-title">Ampliación Baleares</div>
+                        <div class="course-description">24h de travesía. Navega hasta 24m de eslora y cruza a Baleares.
+                        </div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> 24h navegación</span>
+                            <div>
+                                <span class="course-price-label">desde</span>
+                                <span class="course-price">550€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="pnb" data-price="450" data-duration="Flexible">
+                        <div class="course-icon">🌊</div>
+                        <div class="course-title">PNB - Patrón Navegación Básica</div>
+                        <div class="course-description">Gobierna embarcaciones hasta 8m. Navegación costera hasta 5
+                            millas.</div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> Flexible</span>
+                            <div>
+                                <span class="course-price-label">desde</span>
+                                <span class="course-price">450€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-primary" id="nextToDate" disabled>
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Select Date -->
+            <div class="booking-step" id="step2">
+                <h2 style="text-align: center; margin-bottom: 1rem; color: var(--dark-color);">¿Cuándo quieres hacerlo?
+                </h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">Selecciona la fecha que mejor te venga
+                </p>
+
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <div class="calendar-month" id="calendarMonth">Junio 2025</div>
+                        <div class="calendar-nav">
+                            <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                            <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated here -->
+                    </div>
+                    <div
+                        style="margin-top: 1.5rem; display: flex; gap: 2rem; justify-content: center; font-size: 0.9rem;">
+                        <span><span
+                                style="display: inline-block; width: 12px; height: 12px; background: #e8f5e9; border-radius: 3px; margin-right: 5px;"></span>
+                            Plazas disponibles</span>
+                        <span><span
+                                style="display: inline-block; width: 12px; height: 12px; background: #fff3e0; border-radius: 3px; margin-right: 5px;"></span>
+                            Pocas plazas</span>
+                        <span><span
+                                style="display: inline-block; width: 12px; height: 12px; background: #e0e0e0; border-radius: 3px; margin-right: 5px;"></span>
+                            Completo</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="backToCourse">
+                        <i class="fas fa-arrow-left"></i> Atrás
+                    </button>
+                    <button class="btn btn-primary" id="nextToForm" disabled>
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Personal Data -->
+            <div class="booking-step" id="step3">
+                <h2 style="text-align: center; margin-bottom: 1rem; color: var(--dark-color);">Tus datos</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">Necesitamos algunos datos para
+                    completar tu reserva</p>
+
+                <div class="form-container">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="fullName">Nombre completo *</label>
+                            <input type="text" id="fullName" required placeholder="Ej: Juan Pérez García">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" required placeholder="+34 666 777 888">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">¿Tienes experiencia previa en navegación? (Opcional)</label>
+                            <textarea id="experience" rows="3"
+                                placeholder="Cuéntanos si ya has navegado antes, qué títulos tienes, etc."></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="backToDate">
+                        <i class="fas fa-arrow-left"></i> Atrás
+                    </button>
+                    <button class="btn btn-primary" id="nextToConfirm">
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="booking-step" id="step4">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: var(--dark-color);">Confirma tu reserva</h2>
+
+                <div class="confirmation-box">
+                    <div class="confirmation-title">Resumen de tu Reserva</div>
+                    <div class="confirmation-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Curso:</span>
+                            <span class="detail-value" id="confirmCourse">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Fecha:</span>
+                            <span class="detail-value" id="confirmDate">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Duración:</span>
+                            <span class="detail-value" id="confirmDuration">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Alumno:</span>
+                            <span class="detail-value" id="confirmName">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value" id="confirmEmail">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Teléfono:</span>
+                            <span class="detail-value" id="confirmPhone">-</span>
+                        </div>
+                        <div class="total-price">
+                            Total: <span id="confirmPrice">-</span>€
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="margin: 0; color: #e65100;"><strong>📌 Importante:</strong> Recibirás un email de
+                        confirmación con los detalles del pago y las instrucciones para el día del curso.</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="backToForm">
+                        <i class="fas fa-arrow-left"></i> Modificar
+                    </button>
+                    <button class="btn btn-primary" id="confirmBooking">
+                        <i class="fas fa-check"></i> Confirmar Reserva
+                    </button>
+                </div>
+            </div>
+
+            <!-- Success Message (Hidden initially) -->
+            <div class="booking-step" id="stepSuccess">
+                <div class="success-message">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="success-title">¡Reserva Confirmada!</div>
+                    <div class="success-text">
+                        <p>Hemos recibido tu solicitud de reserva correctamente.</p>
+                        <p>En breve recibirás un email en <strong id="successEmail">-</strong> con:</p>
+                        <ul style="text-align: left; display: inline-block; margin-top: 1rem;">
+                            <li>Confirmación de tu reserva</li>
+                            <li>Detalles del pago</li>
+                            <li>Información sobre el punto de encuentro</li>
+                            <li>Qué traer el día del curso</li>
+                        </ul>
+                        <p style="margin-top: 2rem;">¡Nos vemos en el mar! ⚓</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="window.location.href='../index.html'"
+                        style="margin-top: 2rem;">
+                        Volver al Inicio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela náutica de confianza en Barcelona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@escuelanauticaaltair.com</p>
+                <p><i class="fas fa-phone"></i> +34 XXX XXX XXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/booking.js"></script>
+</body>
+
+</html>

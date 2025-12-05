@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir Cursos - Escuela Náutica Altair</title>
+</head>
+
+<body>
+    <h1>Añadiendo cursos al calendario...</h1>
+    <div id="status"></div>
+
+    <script>
+        // Obtener el schedule actual o crear uno nuevo
+        let schedule = JSON.parse(localStorage.getItem('altair_schedule') || '{}');
+
+        // Añadir cursos para diciembre 2025 y enero 2026
+        const newCourses = {
+            'licencia': [
+                { date: '2025-12-14', spots: 6 },
+                { date: '2025-12-21', spots: 5 },
+                { date: '2025-12-28', spots: 6 },
+                { date: '2026-01-11', spots: 6 },
+                { date: '2026-01-18', spots: 5 },
+                { date: '2026-01-25', spots: 6 }
+            ],
+            'per-practicas': [
+                { date: '2025-12-13', spots: 4 },
+                { date: '2025-12-20', spots: 5 },
+                { date: '2025-12-27', spots: 3 },
+                { date: '2026-01-10', spots: 6 },
+                { date: '2026-01-17', spots: 5 },
+                { date: '2026-01-24', spots: 4 },
+                { date: '2026-01-31', spots: 6 }
+            ],
+            'per-completo': [
+                { date: '2025-12-15', spots: 3 },
+                { date: '2025-12-22', spots: 4 },
+                { date: '2026-01-12', spots: 5 },
+                { date: '2026-01-19', spots: 4 },
+                { date: '2026-01-26', spots: 6 }
+            ],
+            'vela': [
+                { date: '2025-12-14', spots: 4 },
+                { date: '2025-12-21', spots: 3 },
+                { date: '2026-01-11', spots: 5 },
+                { date: '2026-01-18', spots: 6 },
+                { date: '2026-01-25', spots: 4 }
+            ],
+            'baleares': [
+                { date: '2025-12-20', spots: 3 },
+                { date: '2025-12-27', spots: 4 },
+                { date: '2026-01-17', spots: 5 },
+                { date: '2026-01-24', spots: 3 },
+                { date: '2026-01-31', spots: 6 }
+            ],
+            'pnb': [
+                { date: '2025-12-13', spots: 4 },
+                { date: '2025-12-20', spots: 5 },
+                { date: '2025-12-27', spots: 3 },
+                { date: '2026-01-10', spots: 6 },
+                { date: '2026-01-17', spots: 4 },
+                { date: '2026-01-24', spots: 5 },
+                { date: '2026-01-31', spots: 3 }
+            ]
+        };
+
+        // Combinar con los cursos existentes
+        for (const [courseType, dates] of Object.entries(newCourses)) {
+            if (!schedule[courseType]) {
+                schedule[courseType] = [];
+            }
+
+            // Añadir las nuevas fechas
+            dates.forEach(newDate => {
+                // Verificar si la fecha ya existe
+                const exists = schedule[courseType].some(d => d.date === newDate.date);
+                if (!exists) {
+                    schedule[courseType].push(newDate);
+                }
+            });
+
+            // Ordenar por fecha
+            schedule[courseType].sort((a, b) => new Date(a.date) - new Date(b.date));
+        }
+
+        // Guardar en localStorage
+        localStorage.setItem('altair_schedule', JSON.stringify(schedule));
+
+        // Mostrar resultado
+        const statusDiv = document.getElementById('status');
+        statusDiv.innerHTML = `
+            <h2 style="color: green;">✓ Cursos añadidos correctamente!</h2>
+            <p>Se han añadido ${Object.values(newCourses).reduce((sum, arr) => sum + arr.length, 0)} fechas de cursos.</p>
+            <h3>Resumen:</h3>
+            <ul>
+                <li>Licencia de Navegación: ${newCourses.licencia.length} fechas</li>
+                <li>PER Prácticas Motor: ${newCourses['per-practicas'].length} fechas</li>
+                <li>PER Completo: ${newCourses['per-completo'].length} fechas</li>
+                <li>Ampliación Vela: ${newCourses.vela.length} fechas</li>
+                <li>Ampliación Baleares: ${newCourses.baleares.length} fechas</li>
+                <li>PNB: ${newCourses.pnb.length} fechas</li>
+            </ul>
+            <p><strong>Total: ${Object.values(newCourses).reduce((sum, arr) => sum + arr.length, 0)} fechas añadidas</strong></p>
+            <p style="margin-top: 2rem;">
+                <a href="pages/calendario.html" style="background: #ff5722; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold;">
+                    Ver Calendario →
+                </a>
+            </p>
+        `;
+
+        console.log('Schedule actualizado:', schedule);
+    </script>
+</body>
+
+</html>

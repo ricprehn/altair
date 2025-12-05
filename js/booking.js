@@ -14,92 +14,78 @@ let bookingData = {
 let currentStep = 1;
 let selectedCourse = null;
 let selectedDate = null;
-let currentMonth = 5; // June (0-indexed)
+let currentMonth = 11; // December (0-indexed)
 let currentYear = 2025;
 
-// Course data with available dates
-const courseSchedule = {
-    'licencia': [
-        { date: '2025-06-21', spots: 5 },
-        { date: '2025-06-28', spots: 2 },
-        { date: '2025-07-02', spots: 6 },
-        { date: '2025-07-05', spots: 6 },
-        { date: '2025-07-09', spots: 5 },
-        { date: '2025-07-12', spots: 4 },
-        { date: '2025-07-16', spots: 6 },
-        { date: '2025-07-19', spots: 3 },
-        { date: '2025-07-23', spots: 5 },
-        { date: '2025-07-26', spots: 5 },
-        { date: '2025-07-30', spots: 4 }
-    ],
-    'per-practicas': [
-        { date: '2025-06-23', spots: 4 },
-        { date: '2025-06-30', spots: 1 },
-        { date: '2025-07-03', spots: 6 },
-        { date: '2025-07-07', spots: 5 },
-        { date: '2025-07-10', spots: 4 },
-        { date: '2025-07-14', spots: 3 },
-        { date: '2025-07-17', spots: 6 },
-        { date: '2025-07-21', spots: 6 },
-        { date: '2025-07-24', spots: 5 },
-        { date: '2025-07-28', spots: 2 },
-        { date: '2025-07-31', spots: 4 }
-    ],
-    'per-completo': [
-        { date: '2025-06-25', spots: 3 },
-        { date: '2025-07-01', spots: 6 },
-        { date: '2025-07-02', spots: 5 },
-        { date: '2025-07-08', spots: 5 },
-        { date: '2025-07-09', spots: 4 },
-        { date: '2025-07-15', spots: 6 },
-        { date: '2025-07-16', spots: 2 },
-        { date: '2025-07-22', spots: 6 },
-        { date: '2025-07-23', spots: 6 },
-        { date: '2025-07-29', spots: 5 },
-        { date: '2025-07-30', spots: 3 }
-    ],
-    'vela': [
-        { date: '2025-06-27', spots: 4 },
-        { date: '2025-07-04', spots: 3 },
-        { date: '2025-07-11', spots: 5 },
-        { date: '2025-07-18', spots: 2 },
-        { date: '2025-07-25', spots: 4 },
-        { date: '2025-07-05', spots: 5 },
-        { date: '2025-07-12', spots: 6 },
-        { date: '2025-07-19', spots: 4 },
-        { date: '2025-07-26', spots: 3 }
-    ],
-    'baleares': [
-        { date: '2025-06-29', spots: 3 },
-        { date: '2025-07-06', spots: 2 },
-        { date: '2025-07-13', spots: 4 },
-        { date: '2025-07-20', spots: 5 },
-        { date: '2025-07-27', spots: 3 },
-        { date: '2025-07-04', spots: 4 },
-        { date: '2025-07-11', spots: 5 },
-        { date: '2025-07-18', spots: 3 },
-        { date: '2025-07-25', spots: 6 }
-    ],
-    'pnb': [
-        { date: '2025-06-24', spots: 4 },
-        { date: '2025-07-01', spots: 3 },
-        { date: '2025-07-08', spots: 5 },
-        { date: '2025-07-15', spots: 2 },
-        { date: '2025-07-22', spots: 6 },
-        { date: '2025-07-29', spots: 4 },
-        { date: '2025-07-03', spots: 5 },
-        { date: '2025-07-10', spots: 6 },
-        { date: '2025-07-17', spots: 4 },
-        { date: '2025-07-24', spots: 5 },
-        { date: '2025-07-31', spots: 3 }
-    ]
-};
+// Load course schedule from localStorage (synced with calendar)
+let courseSchedule = {};
+
+function loadCourseSchedule() {
+    const savedSchedule = localStorage.getItem('altair_schedule');
+
+    if (savedSchedule) {
+        courseSchedule = JSON.parse(savedSchedule);
+        console.log('Course schedule loaded from localStorage:', courseSchedule);
+    } else {
+        // Default fallback schedule
+        courseSchedule = {
+            'licencia': [
+                { date: '2025-12-14', spots: 6 },
+                { date: '2025-12-21', spots: 5 },
+                { date: '2025-12-28', spots: 6 },
+                { date: '2026-01-11', spots: 6 },
+                { date: '2026-01-18', spots: 5 },
+                { date: '2026-01-25', spots: 6 }
+            ],
+            'per-practicas': [
+                { date: '2025-12-13', spots: 4 },
+                { date: '2025-12-20', spots: 5 },
+                { date: '2025-12-27', spots: 3 },
+                { date: '2026-01-10', spots: 6 },
+                { date: '2026-01-17', spots: 5 },
+                { date: '2026-01-24', spots: 4 }
+            ],
+            'per-completo': [
+                { date: '2025-12-15', spots: 3 },
+                { date: '2025-12-22', spots: 4 },
+                { date: '2026-01-12', spots: 5 },
+                { date: '2026-01-19', spots: 4 },
+                { date: '2026-01-26', spots: 6 }
+            ],
+            'vela': [
+                { date: '2025-12-14', spots: 4 },
+                { date: '2025-12-21', spots: 3 },
+                { date: '2026-01-11', spots: 5 },
+                { date: '2026-01-18', spots: 6 },
+                { date: '2026-01-25', spots: 4 }
+            ],
+            'baleares': [
+                { date: '2025-12-20', spots: 3 },
+                { date: '2025-12-27', spots: 4 },
+                { date: '2026-01-17', spots: 5 },
+                { date: '2026-01-24', spots: 3 }
+            ],
+            'pnb': [
+                { date: '2025-12-13', spots: 4 },
+                { date: '2025-12-20', spots: 5 },
+                { date: '2025-12-27', spots: 3 },
+                { date: '2026-01-10', spots: 6 },
+                { date: '2026-01-17', spots: 4 },
+                { date: '2026-01-24', spots: 5 }
+            ]
+        };
+        console.log('Using default course schedule');
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     initializeBookingSystem();
 });
 
 function initializeBookingSystem() {
+    // Load course schedule from localStorage
+    loadCourseSchedule();
+
     // Step 1: Course Selection
     const courseOptions = document.querySelectorAll('.course-option');
     courseOptions.forEach(option => {

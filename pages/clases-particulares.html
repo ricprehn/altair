@@ -1,0 +1,627 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases Particulares Náutica | Escuela Náutica Altair</title>
+    <meta name="description"
+        content="Clases particulares personalizadas de PER, Patrón de Yate y Capitán de Yate. Online y presenciales en Barcelona. ¡Aprueba tu examen con nosotros!">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/additional-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-particulares {
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.95), rgba(0, 168, 232, 0.95)),
+                url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600') center/cover;
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero-particulares h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-particulares p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .particulares-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .modalidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .modalidad-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .modalidad-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .modalidad-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .modalidad-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .modalidad-desc {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .modalidad-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .modalidad-price-detail {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .beneficios-section {
+            background: #f5f7fa;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .beneficio-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .beneficio-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .beneficio-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 119, 190, 0.1);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .beneficio-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .beneficio-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .metodologia-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .metodologia-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metodologia-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .metodologia-item i {
+            color: var(--accent-color);
+            margin-right: 0.75rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            background: white;
+            color: var(--primary-color);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .cursos-disponibles {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .cursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .curso-tag {
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.1), rgba(0, 168, 232, 0.1));
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid var(--primary-color);
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+
+        .curso-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero-particulares h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .modalidad-price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">
+                    <i class="fas fa-anchor"></i> Escuela Náutica Altair
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="../index.html#courses">Cursos</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="calendario.html">Calendario</a>
+                <a href="blog.html">Blog</a>
+                <a href="preguntas.html">Preguntas</a>
+                <a href="contacto.html" class="cta-button">Contacto</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-particulares">
+            <h1><i class="fas fa-user-graduate"></i> Clases Particulares de Náutica</h1>
+            <p>Formación personalizada para aprobar tu examen. Atención 100% individualizada, online o presencial en
+                Barcelona</p>
+            <div class="hero-badges">
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i> Metodología Clara
+                </div>
+                <div class="badge">
+                    <i class="fas fa-clock"></i> Horarios Flexibles
+                </div>
+                <div class="badge">
+                    <i class="fas fa-star"></i> Resultados Garantizados
+                </div>
+            </div>
+        </section>
+
+        <!-- Modalidades -->
+        <div class="particulares-container">
+            <h2 class="section-title">Elige tu Modalidad</h2>
+            <p class="section-subtitle">Adaptamos las clases a tu disponibilidad y preferencias</p>
+
+            <div class="modalidades-grid">
+                <!-- Online -->
+                <div class="modalidad-card">
+                    <div class="modalidad-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="modalidad-title">Clases Online</h3>
+                    <p class="modalidad-desc">Desde cualquier lugar. Clases por videollamada con pizarra digital y
+                        material interactivo.</p>
+                    <div class="modalidad-price">30€</div>
+                    <div class="modalidad-price-detail">por hora</div>
+                    <a href="contacto.html" class="cta-button">Reservar Clase</a>
+                </div>
+
+                <!-- Presencial -->
+                <div class="modalidad-card">
+                    <div class="modalidad-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="modalidad-title">Clases Presenciales</h3>
+                    <p class="modalidad-desc">En Barcelona. Clases cara a cara con todo el material necesario incluido.
+                    </p>
+                    <div class="modalidad-price">35€</div>
+                    <div class="modalidad-price-detail">por hora</div>
+                    <a href="contacto.html" class="cta-button">Reservar Clase</a>
+                </div>
+
+                <!-- Pack -->
+                <div class="modalidad-card" style="border-color: var(--accent-color);">
+                    <div class="modalidad-icon"
+                        style="background: linear-gradient(135deg, var(--accent-color), #e65100);">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="modalidad-title">Pack 5 Clases</h3>
+                    <p class="modalidad-desc">¡Ahorra! Pack de 5 clases con descuento especial. Online o presenciales.
+                    </p>
+                    <div class="modalidad-price">140€</div>
+                    <div class="modalidad-price-detail">28€ por clase (ahorra 10€)</div>
+                    <a href="contacto.html" class="cta-button" style="background: var(--accent-color);">¡Quiero el
+                        Pack!</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beneficios -->
+        <section class="beneficios-section">
+            <div class="particulares-container">
+                <h2 class="section-title">¿Por Qué Elegir Nuestras Clases Particulares?</h2>
+                <p class="section-subtitle">Ventajas que marcan la diferencia en tu aprendizaje</p>
+
+                <div class="beneficios-grid">
+                    <div class="beneficio-item">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="beneficio-content">
+                            <h3>Atención 100% Personalizada</h3>
+                            <p>Clases individuales donde tendrás toda nuestra atención para resolver tus dudas y mejorar
+                                tu evolución.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio-item">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="beneficio-content">
+                            <h3>Flexibilidad de Horarios</h3>
+                            <p>Elige la hora que mejor te convenga. Nos adaptamos siempre a tu disponibilidad.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio-item">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="beneficio-content">
+                            <h3>Metodología Clara y Sencilla</h3>
+                            <p>Aprenderás a entender los enunciados, identificar fórmulas y resolver problemas sin
+                                bloquearte.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio-item">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="beneficio-content">
+                            <h3>A Tu Ritmo de Aprendizaje</h3>
+                            <p>¡No más agobios! Nos centramos en tus dudas para que aprendas y afianceslos conceptos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio-item">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="beneficio-content">
+                            <h3>Resolución de Todas tus Dudas</h3>
+                            <p>Pregunta todo lo que necesites, tanto de teoría como de problemas en carta náutica.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio-item">
+                        <div class="beneficio-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="beneficio-content">
+                            <h3>Mayor Seguridad y Confianza</h3>
+                            <p>Ganarás la confianza necesaria para superar tu examen con éxito.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodología -->
+        <div class="metodologia-section">
+            <h2 class="section-title">Nuestra Metodología</h2>
+            <p class="section-subtitle">Paso a paso hacia tu aprobado</p>
+
+            <div class="metodologia-list">
+                <div class="metodologia-item">
+                    <i class="fas fa-map"></i>
+                    <strong>Resolución paso a paso</strong> de problemas en la carta náutica y explicación de conceptos
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-compass"></i>
+                    Latitud, longitud, rumbos, enfilaciones y oposiciones
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-crosshairs"></i>
+                    Cálculo de demoras y marcaciones para posicionamiento
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Situación de estima con velocidad y tiempo
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-water"></i>
+                    Cálculo de mareas y corrientes
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-book"></i>
+                    Te ayudamos a entender los enunciados de los problemas
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-calculator"></i>
+                    Fórmulas que hay que aplicar en cada tipo de problema
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-magic"></i>
+                    Trucos para resolver problemas de forma fácil
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    Resolución de dudas de teoría
+                </div>
+                <div class="metodologia-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    ¡Mucha práctica! Problemas de exámenes de convocatorias anteriores
+                </div>
+            </div>
+        </div>
+
+        <!-- Cursos Disponibles -->
+        <div class="cursos-disponibles">
+            <h2 class="section-title">Cursos Disponibles</h2>
+            <p class="section-subtitle">Clases particulares para todos los niveles</p>
+
+            <div class="cursos-grid">
+                <div class="curso-tag">
+                    <i class="fas fa-ship"></i> PER (Patrón de Embarcaciones de Recreo)
+                </div>
+                <div class="curso-tag">
+                    <i class="fas fa-anchor"></i> Patrón de Yate
+                </div>
+                <div class="curso-tag">
+                    <i class="fas fa-water"></i> Capitán de Yate
+                </div>
+                <div class="curso-tag">
+                    <i class="fas fa-sailboat"></i> PNB (Patrón de Navegación Básica)
+                </div>
+                <div class="curso-tag">
+                    <i class="fas fa-compass"></i> Licencia de Navegación
+                </div>
+                <div class="curso-tag">
+                    <i class="fas fa-map-marked-alt"></i> Ampliaciones (Vela, Baleares)
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <section class="cta-section">
+            <h2><i class="fas fa-rocket"></i> ¿Listo para Aprobar tu Examen?</h2>
+            <p>Reserva tu primera clase particular y empieza a prepararte con los mejores</p>
+            <div class="cta-buttons">
+                <a href="contacto.html" class="btn-cta-primary">
+                    <i class="fas fa-calendar-check"></i> Reservar Clase Ahora
+                </a>
+                <a href="preguntas.html" class="btn-cta-secondary">
+                    <i class="fas fa-question-circle"></i> Resolver Dudas
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-anchor"></i> Escuela Náutica Altair</h3>
+                <p>Tu escuela náutica de confianza en Barcelona</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Legales</h4>
+                <ul>
+                    <li><a href="legal.html">Aviso Legal</a></li>
+                    <li><a href="legal.html#privacidad">Privacidad</a></li>
+                    <li><a href="legal.html#cookies">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> info@escuelanauticaaltair.com</p>
+                <p><i class="fas fa-phone"></i> +34 XXX XXX XXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Escuela Náutica Altair. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

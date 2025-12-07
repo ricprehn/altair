@@ -97,31 +97,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Add animation on scroll
-    const animateOnScroll = function () {
-        const elements = document.querySelectorAll('.feature, .course-card, .contact-info, #contact-form');
-
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
+    // Intersection Observer for animation on scroll (Performance Optimized)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
     };
 
-    // Set initial styles for animation
-    document.querySelectorAll('.feature, .course-card, .contact-info, #contact-form').forEach(element => {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.feature, .course-card, .contact-info, #contact-form');
+    animatedElements.forEach(element => {
+        // Initial state
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
 
-    // Run animation on load and scroll
-    window.addEventListener('load', animateOnScroll);
-    window.addEventListener('scroll', animateOnScroll);
+        // Start observing
+        observer.observe(element);
+    });
 
     // Add active class to current navigation link
     const sections = document.querySelectorAll('section');

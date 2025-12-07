@@ -104,6 +104,32 @@
                 font-size: 2rem;
             }
         }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
@@ -113,7 +139,7 @@
             <div class="logo">
                 <i class="fas fa-anchor"></i> Escuela Náutica Altair
             </div>
-                        <div class="nav-links">
+            <div class="nav-links">
                 <a href="../index.html">Inicio</a>
                 <a href="nosotros.html">Nosotros</a>
                 <a href="../index.html#courses">Cursos</a>
@@ -171,23 +197,96 @@
                     <li>Adaptación a cada alumno</li>
                     <li>Grupos muy reducidos para máxima atención</li>
                     <li>Transmitir no solo conocimientos, sino pasión por el mar</li>
-                    <li>Seguridad siempre en primer lugar</li>
                 </ul>
             </div>
 
             <div class="content-box">
-                <h2>Nuestra Flota</h2>
-                <p>Contamos con embarcaciones modernas, homologadas y perfectamente equipadas para la formación náutica:
+                <h2><i class="fas fa-ship"></i> Nuestro Barco: El Alma de Altair</h2>
+
+                <img src="../images/finnsailer34/finnsailer-34-cover.webp" alt="Finnsailer 34 navegando a vela"
+                    style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+
+                <h3 style="color: var(--accent-color); font-size: 1.5rem; margin-top: 1rem;">
+                    Finnsailer 34 (1979) - Un Clásico con Historia
+                </h3>
+
+                <p>
+                    El corazón de nuestra escuela es un <strong>Finnsailer 34</strong>, un motovelero clásico finlandés
+                    diseñado por <strong>Hans Groop</strong> y construido bajo los estándares del Lloyd's Register. En
+                    2019, Ricard lo trajo navegando desde <strong>Dinamarca</strong>, cruzando el Báltico, el Canal de
+                    la Mancha y el Atlántico Norte hasta Barcelona. Una travesía de más de 2.000 millas que demostró su
+                    increíble robustez y seguridad.
                 </p>
 
-                <ul>
-                    <li><strong>Embarcaciones a motor:</strong> Para prácticas de PER, PNB y Licencia de Navegación</li>
-                    <li><strong>Veleros:</strong> Para prácticas de vela y extensión a vela del PER</li>
-                    <li><strong>Equipamiento completo:</strong> GPS, plotter, radio VHF, elementos de seguridad
-                        homologados</li>
-                    <li><strong>Mantenimiento riguroso:</strong> Todas las embarcaciones revisadas y actualizadas</li>
-                    <li><strong>Confort y seguridad:</strong> Espacios adecuados para el aprendizaje</li>
-                </ul>
+                <div
+                    style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 5px solid var(--accent-color);">
+                    <h3 style="color: var(--primary-color); margin-top: 0; font-size: 1.3rem;">
+                        <i class="fas fa-star"></i> Lo Que Hace Único a Nuestro Barco
+                    </h3>
+                    <ul style="margin: 0; padding-left: 1.2rem; columns: 2; column-gap: 2rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Construcción Élite:</strong> Casco de fibra
+                            <strong>súper reforzado</strong> con <strong>Certificado Lloyd's</strong>.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Motor y Propulsión:</strong> Volvo Penta D2-40 (2017)
+                            con <strong>hélice plegable</strong> de 3 palas.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Tecnología:</strong> <strong>Electrónica de última
+                                generación</strong> (Radar Quantum, Axiom 9, AIS).</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Diseño Seguro:</strong> Cockpit central profundo y
+                            protegido de los elementos.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Confort:</strong> Interiores en caoba, calefacción y
+                            cocina completa.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Maniobra:</strong> Velas Elvstrøm, hélice de proa y
+                            piloto automático.</li>
+                    </ul>
+                </div>
+
+                <p style="font-style: italic; color: #555; border-left: 3px solid #ccc; padding-left: 1rem;">
+                    "Un barco con alma que transmite seguridad y pasión por el mar. Perfecto para aprender de verdad."
+                </p>
+
+                <h3 style="color: var(--primary-color); margin-top: 2rem;"><i class="fas fa-images"></i> Galería de
+                    Fotos</h3>
+                <div class="gallery-grid">
+                    <a href="../images/finnsailer34/finnsailer-34-navegando.webp" target="_blank" class="gallery-item"
+                        title="Finnsailer 34 navegando">
+                        <img src="../images/finnsailer34/finnsailer-34-navegando.webp" alt="Finnsailer 34 navegando"
+                            loading="lazy">
+                    </a>
+                    <a href="../images/finnsailer34/finnsailer-34-cubierta-teca.webp" target="_blank"
+                        class="gallery-item" title="Cubierta de teca">
+                        <img src="../images/finnsailer34/finnsailer-34-cubierta-teca.webp" alt="Cubierta de teca"
+                            loading="lazy">
+                    </a>
+                    <a href="../images/finnsailer34/finnsailer-34-interior-salon.webp" target="_blank"
+                        class="gallery-item" title="Interior salón">
+                        <img src="../images/finnsailer34/finnsailer-34-interior-salon.webp" alt="Interior salón"
+                            loading="lazy">
+                    </a>
+                    <a href="../images/finnsailer34/finnsailer-34-cocina-equipada.webp" target="_blank"
+                        class="gallery-item" title="Cocina completa">
+                        <img src="../images/finnsailer34/finnsailer-34-cocina-equipada.webp" alt="Cocina equipada"
+                            loading="lazy">
+                    </a>
+                    <a href="../images/finnsailer34/finnsailer-34-camarote-proa.webp" target="_blank"
+                        class="gallery-item" title="Camarote proa">
+                        <img src="../images/finnsailer34/finnsailer-34-camarote-proa.webp" alt="Camarote proa"
+                            loading="lazy">
+                    </a>
+                    <a href="../images/finnsailer34/finnsailer-34-banera-cockpit.webp" target="_blank"
+                        class="gallery-item" title="Bañera central">
+                        <img src="../images/finnsailer34/finnsailer-34-banera-cockpit.webp" alt="Bañera central"
+                            loading="lazy">
+                    </a>
+                    <a href="../images/finnsailer34/finnsailer-34-motor-volvo-penta.webp" target="_blank"
+                        class="gallery-item" title="Motor Volvo Penta">
+                        <img src="../images/finnsailer34/finnsailer-34-motor-volvo-penta.webp" alt="Motor Volvo Penta"
+                            loading="lazy">
+                    </a>
+                    <a href="../images/finnsailer34/finnsailer-34-electronica-raymarine.webp" target="_blank"
+                        class="gallery-item" title="Electrónica Raymarine">
+                        <img src="../images/finnsailer34/finnsailer-34-electronica-raymarine.webp"
+                            alt="Electrónica Raymarine" loading="lazy">
+                    </a>
+                </div>
             </div>
 
             <div class="content-box">

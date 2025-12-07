@@ -1,8 +1,11 @@
 /* Base Styles */
 :root {
-    --primary-color: #0077be;
-    --secondary-color: #00a8e8;
-    --accent-color: #ff6b35;
+    --primary-color: #006dae;
+    /* Slightly darker for better contrast */
+    --secondary-color: #0077c8;
+    /* Darker than #00a8e8 for contrast */
+    --accent-color: #d85c2b;
+    /* Darker orange for better legibility */
     --light-color: #f8f9fa;
     --dark-color: #1a2332;
     --text-color: #2c3e50;

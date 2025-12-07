@@ -77,6 +77,30 @@
             text-align: center;
             display: block;
         }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .blog-post-content {
+                padding: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem !important;
+                /* Force override inline */
+                line-height: 1.3;
+            }
+
+            #polarChart {
+                height: 450px !important;
+                /* Smaller chart height on mobile */
+            }
+
+            table th,
+            table td {
+                padding: 6px !important;
+                font-size: 0.8rem !important;
+            }
+        }
     </style>
 </head>
 

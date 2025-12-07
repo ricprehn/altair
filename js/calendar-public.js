@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadSchedule() {
-    const savedSchedule = localStorage.getItem('altair_schedule');
+    const savedSchedule = localStorage.getItem('altair_schedule_v2025');
 
     if (savedSchedule) {
         courseSchedule = JSON.parse(savedSchedule);
@@ -165,7 +165,7 @@ function loadSchedule() {
             ]
         };
         // Save to localStorage for future use
-        localStorage.setItem('altair_schedule', JSON.stringify(courseSchedule));
+        localStorage.setItem('altair_schedule_v2025', JSON.stringify(courseSchedule));
     }
 }
 

@@ -199,7 +199,7 @@ nav {
 /* Hero Section Optimized for LCP */
 .hero {
     height: 100vh;
-    /* Removed background-image property in favor of <img> tag */
+    background: linear-gradient(135deg, var(--navy-blue) 0%, var(--primary-color) 100%);
     display: flex;
     align-items: center;
     text-align: center;
@@ -208,8 +208,9 @@ nav {
     margin-top: 0;
     position: relative;
     overflow: hidden;
-    /* Ensures image doesn't overflow */
 }
+
+/* .hero-bg-img removed as we use CSS gradient now */
 
 .hero-bg-img {
     position: absolute;

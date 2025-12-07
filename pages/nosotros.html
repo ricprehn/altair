@@ -2,23 +2,7 @@
 <html lang="es">
 
 <head>
-    <!-- Plotly.js for Scientific Charts -->
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
-    <!-- Schema.org Dataset (AI-Ready) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Dataset",
-      "name": "Curvas Polares de Velocidad - Finnsailer 34 BELA",
-      "description": "Datos de rendimiento de velocidad del barco Finnsailer 34 (BELA) en función del ángulo y la intensidad del viento real (TWS) de 6 a 20 nudos.",
-      "variableMeasured": ["Wind Velocity", "Boat Speed", "True Wind Angle"],
-      "creator": {
-        "@type": "EducationalOrganization",
-        "name": "Escuela Náutica Altair"
-      }
-    }
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros | Escuela Náutica Altair</title>
@@ -339,17 +323,13 @@
                 </div>
             </div>
 
-            <div class="content-box">
-                <h2><i class="fas fa-chart-line"></i> Rendimiento Técnico (Polars)</h2>
-                <p>Gráfico polar de velocidad del <strong>Finnsailer 34 (BELA)</strong>. Muestra la velocidad del barco
-                    (eje radial) en función del ángulo del viento real (eje angular) para diferentes intensidades de
-                    viento (6-20 nudos).</p>
-                <!-- Plotly Chart Container -->
-                <div id="polarChart" style="width:100%; height:600px;"></div>
-                <p style="font-size:0.9rem; color:#666; text-align:center; margin-top: 1rem;">
-                    <i class="fas fa-info-circle"></i> Datos basados en el diseño original de Hans Groop y medidas
-                    reales de navegación.
-                </p>
+            <div class="content-box" style="text-align: center; background: #f8f9fa;">
+                <h2><i class="fas fa-chart-line"></i> Rendimiento Técnico</h2>
+                <p>¿Quieres conocer la ciencia detrás del BELA? Hemos analizado sus curvas polares basándonos en los
+                    datos oficiales ORC (Offshore Racing Congress).</p>
+                <a href="blog/analisis-polares-finnsailer-34.html" class="cta-button" style="margin-top: 1rem;">
+                    <i class="fas fa-external-link-alt"></i> Ver Análisis de Polares Completo
+                </a>
             </div>
             <div class="content-box">
                 <h2>Nuestros Valores</h2>
@@ -445,7 +425,7 @@
     </footer>
 
     <script src="../js/script.js"></script>
-    <script src="../js/polar-chart.js"></script>
+
 </body>
 
 </html>

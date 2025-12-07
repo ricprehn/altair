@@ -1,6 +1,7 @@
 // Blog Posts Data - Escuela Náutica Altair
 const blogPosts = [
     // Titulaciones y Formación (1-11)
+    { id: 99, title: "Análisis de Polares: Conoce el Finnsailer 34 a fondo", excerpt: "Estudio técnico del rendimiento del s/y BELA. Gráficas interactivas basadas en datos ORC.", category: "Otros", url: "blog/analisis-polares-finnsailer-34.html", date: "2024-12-26" },
     { id: 1, title: "El Duelo de Titulaciones: Licencia vs. PNB vs. PER", excerpt: "¿Quieres empezar a navegar pero te lías con las siglas? Te ayudamos a elegir el título correcto desde el principio.", category: "Titulaciones", url: "blog/titulaciones-comparativa.html", date: "2024-12-01" },
     { id: 2, title: "PNB vs. Licencia de Navegación: ¿Cuál es la mejor opción?", excerpt: "Analizamos las consecuencias de elegir uno u otro para que no te arrepientas a mitad de temporada.", category: "Titulaciones", url: "blog/pnb-vs-licencia.html", date: "2024-12-02" },
     { id: 3, title: "5 Preguntas Frecuentes sobre el Examen Teórico del PER", excerpt: "Nuestros instructores responden a las dudas que más se repiten en clase para que vayas tranquilo al examen.", category: "Exámenes", url: "blog/preguntas-frecuentes-per.html", date: "2024-12-03" },

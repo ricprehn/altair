@@ -173,10 +173,10 @@ nav {
 }
 
 /* Hero Section */
+/* Hero Section Optimized for LCP */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 61, 91, 0.6), rgba(0, 119, 190, 0.4)),
-        url('../images/hero-bg.webp') no-repeat center center/cover;
+    /* Removed background-image property in favor of <img> tag */
     display: flex;
     align-items: center;
     text-align: center;
@@ -184,16 +184,30 @@ nav {
     padding: 0 20px;
     margin-top: 0;
     position: relative;
+    overflow: hidden;
+    /* Ensures image doesn't overflow */
 }
 
-.hero::before {
-    content: '';
+.hero-bg-img {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 119, 190, 0.1) 0%, rgba(0, 168, 232, 0.1) 100%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    /* Behind everything */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 61, 91, 0.6), rgba(0, 119, 190, 0.4));
+    z-index: -1;
+    /* Above image, below text */
 }
 
 .hero-content {
@@ -201,6 +215,7 @@ nav {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    /* Content on top */
 }
 
 .hero h1 {
@@ -616,6 +631,7 @@ img[loading="lazy"].loaded {
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {

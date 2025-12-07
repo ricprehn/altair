@@ -7,8 +7,8 @@
     <title>Escuela Náutica Altair en Barcelona | Titulaciones Náuticas</title>
     <meta name="description"
         content="Titulaciones náuticas en Barcelona: PER, Licencia de Navegación, PNB. Cursos presenciales y online, prácticas en grupos reducidos. ¡Obtén tu título náutico!">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/additional-styles.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/additional-styles.min.css">
 
     <!-- Preload Hero Image for LCP Optimization -->
     <link rel="preload" as="image" href="images/hero-bg.webp">
@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <header>
         <nav>
             <div class="logo">
@@ -49,13 +50,13 @@
                 <a href="pages/preguntas.html">Preguntas</a>
                 <a href="pages/contacto.html" class="cta-button">Contacto</a>
             </div>
-            <div class="hamburger" aria-label="Abrir menú de navegación">
+            <button class="hamburger" aria-label="Abrir menú de navegación">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="hero" class="hero">
             <!-- Optimized Hero Image for LCP -->
             <img src="images/hero-bg.webp" alt="Navegación a vela en Barcelona" class="hero-bg-img" fetchpriority="high"
@@ -356,7 +357,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
 </body>
 
 </html>

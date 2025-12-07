@@ -322,6 +322,24 @@
             }
         }
     </style>
+    <!-- SEO Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://escuelanauticaaltair.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calendario",
+        "item": "https://escuelanauticaaltair.com/pages/calendario.html"
+      }]
+    }
+    </script>
 </head>
 
 <body>
@@ -347,6 +365,15 @@
             </div>
         </nav>
     </header>
+    <div class="breadcrumb-container" style="max-width: 1200px; margin: 80px auto 0; padding: 1rem 2rem;">
+        <nav aria-label="breadcrumb">
+            <ol style="display: flex; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                <li><a href="../index.html" style="color: grey; text-decoration: none;">Inicio</a></li>
+                <li style="margin: 0 10px; color: grey;">/</li>
+                <li style="color: var(--primary-color, #005c99); font-weight: 500;" aria-current="page">Calendario</li>
+            </ol>
+        </nav>
+    </div>
 
     <main>
         <section class="calendar-hero">
@@ -435,3 +462,4 @@
 </body>
 
 </html>
+

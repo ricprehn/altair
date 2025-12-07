@@ -2,6 +2,23 @@
 <html lang="es">
 
 <head>
+    <!-- Plotly.js for Scientific Charts -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <!-- Schema.org Dataset (AI-Ready) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "Curvas Polares de Velocidad - Finnsailer 34 BELA",
+      "description": "Datos de rendimiento de velocidad del barco Finnsailer 34 (BELA) en función del ángulo y la intensidad del viento real (TWS) de 6 a 20 nudos.",
+      "variableMeasured": ["Wind Velocity", "Boat Speed", "True Wind Angle"],
+      "creator": {
+        "@type": "EducationalOrganization",
+        "name": "Escuela Náutica Altair"
+      }
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros | Escuela Náutica Altair</title>
@@ -14,7 +31,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="print" onload="this.media='all'"><noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
     <style>
         .page-hero {
             background: linear-gradient(rgba(0, 119, 190, 0.85), rgba(0, 168, 232, 0.85)), url('../images/about/barcelona-port.webp') center/cover;
@@ -132,6 +152,24 @@
             transform: scale(1.05);
         }
     </style>
+    <!-- SEO Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://escuelanauticaaltair.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sobre Nosotros",
+        "item": "https://escuelanauticaaltair.com/pages/nosotros.html"
+      }]
+    }
+    </script>
 </head>
 
 <body>
@@ -155,6 +193,16 @@
             </div>
         </nav>
     </header>
+    <div class="breadcrumb-container" style="max-width: 1200px; margin: 80px auto 0; padding: 1rem 2rem;">
+        <nav aria-label="breadcrumb">
+            <ol style="display: flex; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                <li><a href="../index.html" style="color: grey; text-decoration: none;">Inicio</a></li>
+                <li style="margin: 0 10px; color: grey;">/</li>
+                <li style="color: var(--primary-color, #005c99); font-weight: 500;" aria-current="page">Sobre Nosotros
+                </li>
+            </ol>
+        </nav>
+    </div>
 
     <main>
         <section class="page-hero">
@@ -226,7 +274,8 @@
                     </h3>
                     <ul style="margin: 0; padding-left: 1.2rem; columns: 2; column-gap: 2rem;">
                         <li style="margin-bottom: 0.5rem;"><strong>Construcción Élite:</strong> Casco de fibra
-                            <strong>súper reforzado</strong> con <strong>Certificado Lloyd's</strong>.</li>
+                            <strong>súper reforzado</strong> con <strong>Certificado Lloyd's</strong>.
+                        </li>
                         <li style="margin-bottom: 0.5rem;"><strong>Motor y Propulsión:</strong> Volvo Penta D2-40 (2017)
                             con <strong>hélice plegable</strong> de 3 palas.</li>
                         <li style="margin-bottom: 0.5rem;"><strong>Tecnología:</strong> <strong>Electrónica de última
@@ -290,6 +339,18 @@
                 </div>
             </div>
 
+            <div class="content-box">
+                <h2><i class="fas fa-chart-line"></i> Rendimiento Técnico (Polars)</h2>
+                <p>Gráfico polar de velocidad del <strong>Finnsailer 34 (BELA)</strong>. Muestra la velocidad del barco
+                    (eje radial) en función del ángulo del viento real (eje angular) para diferentes intensidades de
+                    viento (6-20 nudos).</p>
+                <!-- Plotly Chart Container -->
+                <div id="polarChart" style="width:100%; height:600px;"></div>
+                <p style="font-size:0.9rem; color:#666; text-align:center; margin-top: 1rem;">
+                    <i class="fas fa-info-circle"></i> Datos basados en el diseño original de Hans Groop y medidas
+                    reales de navegación.
+                </p>
+            </div>
             <div class="content-box">
                 <h2>Nuestros Valores</h2>
                 <div class="values-grid">
@@ -384,6 +445,7 @@
     </footer>
 
     <script src="../js/script.js"></script>
+    <script src="../js/polar-chart.js"></script>
 </body>
 
 </html>

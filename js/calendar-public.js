@@ -69,78 +69,99 @@ function loadSchedule() {
         // Default schedule
         courseSchedule = {
             'licencia': [
+                // Mayo 2025 (Fines de semana)
+                { date: '2025-05-10', spots: 6 },
+                { date: '2025-05-24', spots: 5 },
+                // Junio 2025 (Fines de semana y San Juan)
+                { date: '2025-06-07', spots: 6 },
+                { date: '2025-06-14', spots: 4 },
                 { date: '2025-06-21', spots: 5 },
-                { date: '2025-06-28', spots: 2 },
-                { date: '2025-07-02', spots: 6 },
-                { date: '2025-07-05', spots: 6 },
+                { date: '2025-06-28', spots: 6 },
+                // Julio 2025 (Intensivo: Entre semana y Fines de semana)
+                { date: '2025-07-02', spots: 6 }, // Miércoles
+                { date: '2025-07-05', spots: 6 }, // Sábado
+                { date: '2025-07-06', spots: 4 }, // Domingo
                 { date: '2025-07-09', spots: 5 },
                 { date: '2025-07-12', spots: 4 },
+                { date: '2025-07-13', spots: 3 },
                 { date: '2025-07-16', spots: 6 },
                 { date: '2025-07-19', spots: 3 },
                 { date: '2025-07-23', spots: 5 },
                 { date: '2025-07-26', spots: 5 },
+                { date: '2025-07-27', spots: 4 },
                 { date: '2025-07-30', spots: 4 }
             ],
             'per-practicas': [
+                // Mayo
+                { date: '2025-05-17', spots: 5 },
+                // Junio
+                { date: '2025-06-07', spots: 4 },
                 { date: '2025-06-23', spots: 4 },
                 { date: '2025-06-30', spots: 1 },
+                // Julio (Intensivo)
                 { date: '2025-07-03', spots: 6 },
+                { date: '2025-07-05', spots: 4 },
                 { date: '2025-07-07', spots: 5 },
                 { date: '2025-07-10', spots: 4 },
+                { date: '2025-07-12', spots: 3 },
                 { date: '2025-07-14', spots: 3 },
                 { date: '2025-07-17', spots: 6 },
                 { date: '2025-07-21', spots: 6 },
-                { date: '2025-07-24', spots: 5 },
+                { date: '2025-07-26', spots: 5 },
                 { date: '2025-07-28', spots: 2 },
                 { date: '2025-07-31', spots: 4 }
             ],
             'per-completo': [
+                // Mayo
+                { date: '2025-05-12', spots: 6 },
+                { date: '2025-05-26', spots: 5 },
+                // Junio
+                { date: '2025-06-09', spots: 4 },
                 { date: '2025-06-25', spots: 3 },
+                // Julio
                 { date: '2025-07-01', spots: 6 },
-                { date: '2025-07-02', spots: 5 },
                 { date: '2025-07-08', spots: 5 },
-                { date: '2025-07-09', spots: 4 },
                 { date: '2025-07-15', spots: 6 },
-                { date: '2025-07-16', spots: 2 },
                 { date: '2025-07-22', spots: 6 },
-                { date: '2025-07-23', spots: 6 },
-                { date: '2025-07-29', spots: 5 },
-                { date: '2025-07-30', spots: 3 }
+                { date: '2025-07-29', spots: 5 }
             ],
             'vela': [
-                { date: '2025-06-27', spots: 4 },
-                { date: '2025-07-04', spots: 3 },
+                // Mayo
+                { date: '2025-05-03', spots: 4 },
+                { date: '2025-05-31', spots: 5 },
+                // Junio
+                { date: '2025-06-14', spots: 4 },
+                { date: '2025-06-28', spots: 3 },
+                // Julio
                 { date: '2025-07-05', spots: 5 },
-                { date: '2025-07-11', spots: 5 },
                 { date: '2025-07-12', spots: 6 },
-                { date: '2025-07-18', spots: 2 },
                 { date: '2025-07-19', spots: 4 },
-                { date: '2025-07-25', spots: 4 },
                 { date: '2025-07-26', spots: 3 }
             ],
             'baleares': [
+                // Mayo
+                { date: '2025-05-02', spots: 3 },
+                { date: '2025-05-23', spots: 4 },
+                // Junio
+                { date: '2025-06-20', spots: 5 }, // Revetlla
                 { date: '2025-06-29', spots: 3 },
+                // Julio
                 { date: '2025-07-04', spots: 4 },
-                { date: '2025-07-06', spots: 2 },
                 { date: '2025-07-11', spots: 5 },
-                { date: '2025-07-13', spots: 4 },
                 { date: '2025-07-18', spots: 3 },
-                { date: '2025-07-20', spots: 5 },
-                { date: '2025-07-25', spots: 6 },
-                { date: '2025-07-27', spots: 3 }
+                { date: '2025-07-25', spots: 6 }
             ],
             'pnb': [
-                { date: '2025-06-24', spots: 4 },
+                // Mayo
+                { date: '2025-05-17', spots: 5 },
+                // Junio
+                { date: '2025-06-14', spots: 4 },
+                // Julio
                 { date: '2025-07-01', spots: 3 },
-                { date: '2025-07-03', spots: 5 },
                 { date: '2025-07-08', spots: 5 },
-                { date: '2025-07-10', spots: 6 },
                 { date: '2025-07-15', spots: 2 },
-                { date: '2025-07-17', spots: 4 },
                 { date: '2025-07-22', spots: 6 },
-                { date: '2025-07-24', spots: 5 },
-                { date: '2025-07-29', spots: 4 },
-                { date: '2025-07-31', spots: 3 }
+                { date: '2025-07-29', spots: 4 }
             ]
         };
         // Save to localStorage for future use

@@ -6,9 +6,10 @@ Has recibido un **sistema completo de reservas online** con:
 
 ### ✅ Para los Alumnos (`/pages/reservas.html`)
 - Sistema de reservas paso a paso (4 pasos)
-- Selección de curso con precios claros
+- Selección de curso y modalidad (Online/Presencial)
 - Calendario interactivo con disponibilidad en tiempo real
 - Formulario de datos del alumno
+- Simulación de Pasarela de Pago
 - Confirmación visual de la reserva
 - Email automático de confirmación (pendiente configurar)
 

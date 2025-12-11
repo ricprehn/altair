@@ -11,7 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="print" onload="this.media='all'"><noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
     <style>
         .booking-container {
             max-width: 1000px;
@@ -484,6 +487,9 @@
                 <a href="blog.html">Blog</a>
                 <a href="preguntas.html">Preguntas</a>
                 <a href="contacto.html" class="cta-button">Contacto</a>
+                <a href="https://aula.escuelanauticaaltair.com" class="nav-link-login"
+                    style="margin-left: 10px; border: 1px solid var(--primary-color); padding: 8px 15px; border-radius: 20px; color: var(--primary-color); text-decoration: none;"><i
+                        class="fas fa-user-lock"></i> Aula Virtual</a>
             </div>
             <div class="hamburger" aria-label="Abrir menÃº de navegaciÃ³n">
                 <i class="fas fa-bars"></i>
@@ -562,14 +568,57 @@
 
                     <div class="course-option" data-course="per-completo" data-price="850" data-duration="Flexible">
                         <div class="course-icon">🚢</div>
-                        <div class="course-title">PER Completo (Teoría + Prácticas)</div>
-                        <div class="course-description">Curso completo: teoría online/presencial + prácticas motor. Todo
-                            incluido.</div>
+                        <div class="course-title">PER Motor (Teoría + Prácticas)</div>
+                        <div class="course-description">Curso completo: teoría online/presencial + prácticas de motor
+                            obligatorias.</div>
                         <div class="course-details">
                             <span class="course-duration"><i class="fas fa-clock"></i> Flexible</span>
                             <div>
                                 <span class="course-price-label">desde</span>
                                 <span class="course-price">850€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="per-vela" data-price="1300" data-duration="Flexible + 16h">
+                        <div class="course-icon">⛵</div>
+                        <div class="course-title">PER Completo + Vela</div>
+                        <div class="course-description">Todo el PER + Habilitación a Vela (16h). Ahorra contratando el
+                            pack.</div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> Flexible</span>
+                            <div>
+                                <span class="course-price-label">pack</span>
+                                <span class="course-price">1300€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="per-baleares" data-price="1400"
+                        data-duration="Flexible + 24h">
+                        <div class="course-icon">🧭</div>
+                        <div class="course-title">PER Completo + Baleares</div>
+                        <div class="course-description">Todo el PER + Habilitación a Baleares (24h). Amplía tu eslora a
+                            24m.</div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> Flexible</span>
+                            <div>
+                                <span class="course-price-label">pack</span>
+                                <span class="course-price">1400€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-option" data-course="per-total" data-price="1850" data-duration="Flexible + 40h">
+                        <div class="course-icon">🏆</div>
+                        <div class="course-title">PER Total (Vela + Baleares)</div>
+                        <div class="course-description">El pack definitivo: PER + Vela + Baleares. Máximas atribuciones.
+                        </div>
+                        <div class="course-details">
+                            <span class="course-duration"><i class="fas fa-clock"></i> Flexible</span>
+                            <div>
+                                <span class="course-price-label">pack</span>
+                                <span class="course-price">1850€</span>
                             </div>
                         </div>
                     </div>
@@ -687,6 +736,15 @@
                             <input type="tel" id="phone" required placeholder="+34 666 777 888">
                         </div>
                         <div class="form-group">
+                            <label for="modality">Modalidad Preferida *</label>
+                            <select id="modality"
+                                style="width: 100%; padding: 0.9rem; border: 2px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif;">
+                                <option value="Online">Teoría Online (Aula Virtual)</option>
+                                <option value="Presencial">Teoría Presencial</option>
+                                <option value="Solo Prácticas">Solo Prácticas (si ya tienes teoría)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="experience">¿Tienes experiencia previa en navegación? (Opcional)</label>
                             <textarea id="experience" rows="3"
                                 placeholder="Cuéntanos si ya has navegado antes, qué títulos tienes, etc."></textarea>
@@ -720,6 +778,10 @@
                             <span class="detail-value" id="confirmDate">-</span>
                         </div>
                         <div class="detail-row">
+                            <span class="detail-label">Modalidad:</span>
+                            <span class="detail-value" id="confirmModality">-</span>
+                        </div>
+                        <div class="detail-row">
                             <span class="detail-label">Duración:</span>
                             <span class="detail-value" id="confirmDuration">-</span>
                         </div>
@@ -743,8 +805,8 @@
 
                 <div
                     style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
-                    <p style="margin: 0; color: #e65100;"><strong>📌 Importante:</strong> Recibirás un email de
-                        confirmación con los detalles del pago y las instrucciones para el día del curso.</p>
+                    <p style="margin: 0; color: #e65100;"><strong>📌 Pago Seguro:</strong> Al confirmar, serás
+                        redirigido a la pasarela de pago segura para abonar el importe total.</p>
                 </div>
 
                 <div class="button-group">
@@ -752,7 +814,7 @@
                         <i class="fas fa-arrow-left"></i> Modificar
                     </button>
                     <button class="btn btn-primary" id="confirmBooking">
-                        <i class="fas fa-check"></i> Confirmar Reserva
+                        <i class="fas fa-credit-card"></i> Pagar y Confirmar
                     </button>
                 </div>
             </div>
@@ -782,6 +844,7 @@
         </div>
     </main>
 
+    <script src="../js/booking.js"></script>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -804,4 +867,3 @@
 </body>
 
 </html>
-

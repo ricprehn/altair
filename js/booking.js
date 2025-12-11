@@ -8,6 +8,7 @@ let bookingData = {
     fullName: null,
     email: null,
     phone: null,
+    modality: 'Online',
     experience: null
 };
 
@@ -46,6 +47,27 @@ function loadCourseSchedule() {
                 { date: '2026-01-24', spots: 4 }
             ],
             'per-completo': [
+                { date: '2025-12-15', spots: 3 },
+                { date: '2025-12-22', spots: 4 },
+                { date: '2026-01-12', spots: 5 },
+                { date: '2026-01-19', spots: 4 },
+                { date: '2026-01-26', spots: 6 }
+            ],
+            'per-vela': [
+                { date: '2025-12-15', spots: 3 },
+                { date: '2025-12-22', spots: 4 },
+                { date: '2026-01-12', spots: 5 },
+                { date: '2026-01-19', spots: 4 },
+                { date: '2026-01-26', spots: 6 }
+            ],
+            'per-baleares': [
+                { date: '2025-12-15', spots: 3 },
+                { date: '2025-12-22', spots: 4 },
+                { date: '2026-01-12', spots: 5 },
+                { date: '2026-01-19', spots: 4 },
+                { date: '2026-01-26', spots: 6 }
+            ],
+            'per-total': [
                 { date: '2025-12-15', spots: 3 },
                 { date: '2025-12-22', spots: 4 },
                 { date: '2026-01-12', spots: 5 },
@@ -102,6 +124,16 @@ function initializeBookingSystem() {
             document.getElementById('nextToDate').disabled = false;
         });
     });
+
+    // Check for course parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseParam = urlParams.get('course');
+    if (courseParam) {
+        const courseElement = document.querySelector(`.course-option[data-course="${courseParam}"]`);
+        if (courseElement) {
+            courseElement.click();
+        }
+    }
 
     // Navigation buttons
     document.getElementById('nextToDate').addEventListener('click', () => goToStep(2));
@@ -259,6 +291,7 @@ function validateAndGoToConfirm() {
     const fullName = document.getElementById('fullName').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
+    const modality = document.getElementById('modality').value;
     const experience = document.getElementById('experience').value.trim();
 
     if (!fullName || !email || !phone) {
@@ -277,6 +310,7 @@ function validateAndGoToConfirm() {
     bookingData.fullName = fullName;
     bookingData.email = email;
     bookingData.phone = phone;
+    bookingData.modality = modality;
     bookingData.experience = experience;
 
     goToStep(4);
@@ -285,6 +319,7 @@ function validateAndGoToConfirm() {
 function updateConfirmation() {
     document.getElementById('confirmCourse').textContent = bookingData.courseName;
     document.getElementById('confirmDate').textContent = formatDate(bookingData.date);
+    document.getElementById('confirmModality').textContent = bookingData.modality;
     document.getElementById('confirmDuration').textContent = bookingData.duration;
     document.getElementById('confirmName').textContent = bookingData.fullName;
     document.getElementById('confirmEmail').textContent = bookingData.email;
@@ -299,45 +334,54 @@ function formatDate(dateStr) {
 }
 
 function submitBooking() {
-    // Create booking object
-    const booking = {
-        id: Date.now(),
-        bookingDate: new Date().toISOString(),
-        ...bookingData,
-        status: 'pending'
-    };
+    // Mock Payment Process
+    const confirmBtn = document.getElementById('confirmBooking');
+    const originalText = confirmBtn.innerHTML;
+    confirmBtn.disabled = true;
+    confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando Pago...';
 
-    // Save to localStorage (in production, this would go to Firebase)
-    let bookings = JSON.parse(localStorage.getItem('altair_bookings') || '[]');
-    bookings.push(booking);
-    localStorage.setItem('altair_bookings', JSON.stringify(bookings));
+    setTimeout(() => {
+        // Create booking object
+        const booking = {
+            id: Date.now(),
+            bookingDate: new Date().toISOString(),
+            ...bookingData,
+            status: 'pending'
+        };
 
-    // Update available spots
-    let schedule = JSON.parse(localStorage.getItem('altair_schedule') || JSON.stringify(courseSchedule));
-    if (schedule[bookingData.course]) {
-        const dateEntry = schedule[bookingData.course].find(s => s.date === bookingData.date);
-        if (dateEntry && dateEntry.spots > 0) {
-            dateEntry.spots--;
-            localStorage.setItem('altair_schedule', JSON.stringify(schedule));
+        // Save to localStorage (in production, this would go to Firebase)
+        let bookings = JSON.parse(localStorage.getItem('altair_bookings') || '[]');
+        bookings.push(booking);
+        localStorage.setItem('altair_bookings', JSON.stringify(bookings));
+
+        // Update available spots
+        let schedule = JSON.parse(localStorage.getItem('altair_schedule') || JSON.stringify(courseSchedule));
+        if (schedule[bookingData.course]) {
+            const dateEntry = schedule[bookingData.course].find(s => s.date === bookingData.date);
+            if (dateEntry && dateEntry.spots > 0) {
+                dateEntry.spots--;
+                localStorage.setItem('altair_schedule', JSON.stringify(schedule));
+            }
         }
-    }
 
-    console.log('Booking submitted:', booking);
+        console.log('Booking submitted:', booking);
 
-    // Show success message
-    document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
-    document.getElementById('stepSuccess').classList.add('active');
-    document.getElementById('successEmail').textContent = bookingData.email;
+        // Show success message
+        document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
+        document.getElementById('stepSuccess').classList.add('active');
+        document.getElementById('successEmail').textContent = bookingData.email;
 
-    // Update progress bar to show completion
-    document.querySelectorAll('.step-indicator').forEach(indicator => {
-        indicator.classList.remove('active');
-        indicator.classList.add('completed');
-    });
-    document.getElementById('progressFill').style.width = '100%';
+        // Update progress bar to show completion
+        document.querySelectorAll('.step-indicator').forEach(indicator => {
+            indicator.classList.remove('active');
+            indicator.classList.add('completed');
+        });
+        document.getElementById('progressFill').style.width = '100%';
 
-    // Send confirmation email
-    sendConfirmationEmail(bookingData);
+        // Send confirmation email
+        sendConfirmationEmail(bookingData);
+
+    }, 2000); // Simulate 2s payment delay
 }
 
 function sendConfirmationEmail(data) {
